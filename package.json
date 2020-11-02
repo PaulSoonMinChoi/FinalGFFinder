@@ -1,0 +1,43 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "The navigation bar for GF Finder. Navigate through the Home, the Find/Search bar, the Login/Signup/Profile",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon",
+    "init-database": "mysql -u root < schema.sql",
+    "build": "webpack -w",
+    "dev": "live-server /client/public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GF-Finder/NavBar.git"
+  },
+  "author": "Tracy Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GF-Finder/NavBar/issues"
+  },
+  "homepage": "https://github.com/GF-Finder/NavBar#readme",
+  "dependencies": {
+    "axios": "0.19.2",
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "mysql": "2.18.1",
+    "path": "0.12.7",
+    "nodemon": "2.0.4",
+    "live-server": "1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.2",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
+  }
+}
