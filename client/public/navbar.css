@@ -1,0 +1,199 @@
+.ttnav {
+  position: absolute;
+  width: 1920px;
+  height: 130px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(180deg, rgba(147, 45, 183, 0.81) 10.42%, #0D1132 54.17%, rgba(180, 92, 249, 0.85) 73.44%, rgba(31, 39, 55, 0.985816) 100%);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+}
+
+.ttlogo {
+  position: absolute;
+  width: 633px;
+  height: 113px;
+  left: 19px;
+  top: 8px;
+  background-image: url("https://i.ibb.co/s9YtFpZ/GF-Finder-Logo-4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 631px 145px;
+  box-shadow: inset 0px 4px 4px rgba(203, 152, 221, 0.49);
+  border-radius: 62px;
+}
+
+.ttsearchbar {
+  position: absolute;
+  width: 750px;
+  height: 72px;
+  left: 697px;
+  top: 33px;
+
+  background: linear-gradient(0deg, rgba(7, 1, 12, 0.51), rgba(7, 1, 12, 0.51)), #1C2331;
+  box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 65px;
+}
+
+.ttmail {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 30%;
+  left: 1810px;
+  top: 52px;
+  background-size: contain;
+  animation-fill-mode: backwards;
+  background-image: url("https://i.ibb.co/WfKnKg1/Skull-Strker1.jpg");
+
+}
+
+.ttSignUp {
+position: absolute;
+width: 120px;
+height: 42px;
+left: 1680px;
+top: 50px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #FFFFFF;
+}
+.ttAboutUs{
+position: absolute;
+width: 173px;
+height: 42px;
+left: 1500px;
+top: 50px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #FFFFFF;
+}
+
+.ttlogin {
+position: absolute;
+width: 217px;
+height: 35px;
+left: 1680px;
+top: 85px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #FFFFFF;
+
+}
+
+.ttGif{
+  position: relative;
+  background-repeat: no-repeat;
+  width: 1080px;
+  height: 550px;
+  top:0;
+  left:0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%);;
+}
+
+.modal-main {
+  position:fixed;
+  background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%);
+  width: 1080px;
+  height: 350px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.log-in-modal-main {
+  position: relative;
+  width: 647px;
+  height: 986px;
+  left: 50%;
+  top: 50%;
+
+  background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
+  transform: translate(-50%,-50%);
+}
+.sign-up-modal-main {
+  position:fixed;
+  width: 647px;
+  height: 600px;
+  left: 50%;
+  top: 50%;
+  display: flex;
+
+  background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.ttclose{
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  appearance: none;
+  font-size: xx-large;
+}
+
+.ttsignupTitle {
+  position: absolute;
+  width: 602px;
+  height: 133px;
+  left: 135px;
+  top: 0px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 42px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #FFFFFF;
+
+}
+

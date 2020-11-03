@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use('/', router);
+// app.use('/', router);
 
 
 

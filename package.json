@@ -4,7 +4,7 @@
   "description": "The navigation bar for GF Finder. Navigate through the Home, the Find/Search bar, the Login/Signup/Profile",
   "main": "server/index.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon server/index.js",
     "init-database": "mysql -u root < schema.sql",
     "build": "webpack -w",
     "dev": "live-server /client/public/index.html"
