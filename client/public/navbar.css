@@ -149,8 +149,8 @@ color: #FFFFFF;
 }
 .sign-up-modal-main {
   position:fixed;
-  width: 647px;
-  height: 600px;
+  width: 500px;
+  height: 700px;
   left: 50%;
   top: 50%;
   display: flex;
@@ -179,14 +179,14 @@ color: #FFFFFF;
 .ttsignupTitle {
   position: absolute;
   width: 602px;
-  height: 133px;
-  left: 135px;
-  top: 0px;
+  font-size: 24px;
+  margin-top: 5px;
+  margin-left: 25%;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 42px;
   display: flex;
   align-items: center;
@@ -196,4 +196,58 @@ color: #FFFFFF;
   color: #FFFFFF;
 
 }
+.ttname {
+  display: inline-flex;
+}
 
+form {
+  color: white;
+  display: grid;
+  margin-top: 10%;
+  margin-left: 5%;
+  font-size: larger;
+}
+
+input[type="text" i] {
+  padding: 1px 2px;
+  width: 450px;
+  height: 40px;
+  background: rgba(60, 62, 102, 0.55);
+}
+
+select{
+  margin-left: 2%;
+  height: 30px;
+  background: rgba(60, 62, 102, 0.55);
+  color: white;
+}
+
+.textinput {
+  display: grid
+}
+
+input[type="submit" i] {
+  background: rgba(81, 37, 138, 0.38);
+  border-radius: 17px;
+  color: white;
+  width: 100px;
+  height: 30px;
+  place-self: center;
+  font-size: larger;
+}
+
+.aboutme {
+  height: 80px;
+}
+
+.ttclosesignup {
+  color: white;
+  position: fixed;
+  height: 15px;
+  top: 0;
+  left: 0;
+  margin-top: 650px;
+  display: flex;
+  position: fixed;
+  margin-left: 37%;
+}
