@@ -1,16 +1,57 @@
 import React from 'react';
 
-const LogInModal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+class LogInModal extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-  return (
-    <div className={showHideClassName}>
-      <section className="log-in-modal-main">
+  handleChange(e) {
+    const target = e.target;
+    const name = target.name;
 
-        <div className="ttclose" onClick={handleClose}>x</div>
-      </section>
-    </div>
-  );
+    this.setState({
+      [name]: target.value
+    });
+    console.log(target.value);
+  }
+
+  render() {
+    const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
+
+    return (
+      <div className={showHideClassName}>
+        <section className="log-in-modal-main">
+          <div className="ttlogintitle">Login to find some friends!</div>
+          <div className="logintext">
+            <form>
+              <label>
+                Username:
+                <br></br>
+                <input type="text2" name="username" onChange={this.handleChange} />
+              </label>
+              <br></br>
+              <label>
+                Password:
+                <br></br>
+                <input type="text2" name="password" onChange={this.handleChange} />
+              </label>
+              <input type="submit2" value="Submit" />
+            </form>
+
+          </div>
+
+          <div className="ttcloselogin" onClick={this.props.handleClose}>I changed my mind...</div>
+        </section>
+      </div>
+    );
+  }
+
+
 };
 
 export default LogInModal;

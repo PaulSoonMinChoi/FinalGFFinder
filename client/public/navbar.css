@@ -139,8 +139,8 @@ color: #FFFFFF;
 }
 .log-in-modal-main {
   position: relative;
-  width: 647px;
-  height: 986px;
+  width: 490px;
+  height: 420px;
   left: 50%;
   top: 50%;
 
@@ -250,4 +250,37 @@ input[type="submit" i] {
   display: flex;
   position: fixed;
   margin-left: 37%;
+}
+
+.ttlogintitle {
+  font-size: x-large;
+  color: white;
+  margin-left: 25%;
+  display: flex;
+  padding-top: 15px;
+}
+
+.ttcloselogin {
+  margin-top: 20px;
+  margin-left: 40%;
+  color: white;
+}
+
+input[type="submit2" i] {
+  background: rgba(81, 37, 138, 0.38);
+  border-radius: 17px;
+  color: white;
+  width: 120px;
+  height: 30px;
+  margin-top: 25px;
+  place-self: center;
+  font-size: larger;
+  text-align-last: center;
+}
+
+input[type="text2" i] {
+  padding: 1px 2px;
+  width: 430px;
+  height: 40px;
+  background: rgba(60, 62, 102, 0.55);
 }
