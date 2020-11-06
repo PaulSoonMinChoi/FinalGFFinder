@@ -27,23 +27,26 @@
 
 .ttsearchbar {
   position: absolute;
-  width: 750px;
+  width: 700px;
   height: 72px;
   left: 697px;
   top: 33px;
 
   background: linear-gradient(0deg, rgba(7, 1, 12, 0.51), rgba(7, 1, 12, 0.51)), #1C2331;
   box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
-  border-radius: 65px;
+  border-radius: 30px;
 }
 
 .ttmail {
   position: absolute;
-  width: 35px;
-  height: 35px;
-  border-radius: 30%;
-  left: 1810px;
-  top: 52px;
+  z-index: 1;
+
+  left: 1825px;
+  top: 6px;
+  width: 30px;
+  height: 30px;
+
+  background-repeat: no-repeat;
   background-size: contain;
   animation-fill-mode: backwards;
   background-image: url("https://i.ibb.co/WfKnKg1/Skull-Strker1.jpg");
@@ -71,9 +74,9 @@ color: #FFFFFF;
 }
 .ttAboutUs{
 position: absolute;
-width: 173px;
+width: 140px;
 height: 42px;
-left: 1500px;
+left: 1440px;
 top: 50px;
 
 font-family: Roboto;
@@ -95,6 +98,7 @@ width: 217px;
 height: 35px;
 left: 1680px;
 top: 85px;
+margin-top: 4px;
 
 font-family: Roboto;
 font-style: normal;
@@ -137,6 +141,29 @@ color: #FFFFFF;
   left:50%;
   transform: translate(-50%,-50%);
 }
+
+.picture-modal-main {
+  position: relative;
+  width: 639px;
+  height: 320px;
+  left: 50%;
+  top: 50%;
+
+  background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
+  transform: translate(-50%,-50%);
+}
+
+.username-modal-main {
+  position: relative;
+  width: 639px;
+  height: 320px;
+  left: 50%;
+  top: 50%;
+
+  background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
+  transform: translate(-50%,-50%);
+}
+
 .log-in-modal-main {
   position: relative;
   width: 490px;
@@ -147,12 +174,13 @@ color: #FFFFFF;
   background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
   transform: translate(-50%,-50%);
 }
+
 .sign-up-modal-main {
   position:fixed;
   width: 500px;
-  height: 700px;
+  height: 770px;
   left: 50%;
-  top: 50%;
+  top: 55%;
   display: flex;
 
   background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
@@ -167,13 +195,17 @@ color: #FFFFFF;
   display: none;
 }
 
-.ttclose{
+.ttclose {
   color: white;
   position: absolute;
   top: 0;
   right: 0;
   appearance: none;
-  font-size: xx-large;
+  font-size: unset;
+}
+
+.ttclose:hover {
+  color: blue;
 }
 
 .ttsignupTitle {
@@ -209,6 +241,7 @@ form {
 }
 
 input[type="text" i] {
+  color: white;
   padding: 1px 2px;
   width: 450px;
   height: 40px;
@@ -246,7 +279,7 @@ input[type="submit" i] {
   height: 15px;
   top: 0;
   left: 0;
-  margin-top: 650px;
+  margin-top: 735px;
   display: flex;
   position: fixed;
   margin-left: 37%;
@@ -262,7 +295,7 @@ input[type="submit" i] {
 
 .ttcloselogin {
   margin-top: 20px;
-  margin-left: 40%;
+  margin-left: 35%;
   color: white;
 }
 
@@ -279,8 +312,159 @@ input[type="submit2" i] {
 }
 
 input[type="text2" i] {
+  color: white;
   padding: 1px 2px;
   width: 430px;
   height: 40px;
   background: rgba(60, 62, 102, 0.55);
+}
+
+input[type="submit" i]:hover, input[type="submit2" i]:hover, select:hover, input[type="text" i]:hover, input[type="text2" i]:hover {
+  border: solid 3px rgba(168, 140, 197, 1);
+}
+
+.ttclosesignup:hover, .ttcloselogin:hover{
+  color: rgba(168, 140, 197, 1);
+}
+
+.ttAboutUs:hover, .ttlogout:hover, .ttSignUp:hover{
+  border-bottom: solid 4px whitesmoke;
+}
+
+.ttlogin:hover {
+  font-style: italic;
+}
+
+.ttsearchbar:hover {
+  background-color: rgba(168, 140, 197, 1);
+}
+
+.THANKYOU {
+  font-size: xx-large;
+  color: white;
+  margin-top: 500px;
+  margin-left: 40%;
+}
+
+
+.submit2 {
+  margin-top: 5%;
+  margin-left: 35%;
+}
+
+.loginform {
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.ttuser {
+position: absolute;
+height: 42px;
+top: 84px;
+left: 1700px;
+width: 200px;
+justify-content: center;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #FFFFFF;
+}
+.ttuserprof {
+  margin: 10px;
+  text-align: center;
+}
+.ttprofilepic {
+position: absolute;
+width: 80px;
+height: 74px;
+left: 1761px;
+top: 15px;
+border-radius: 50%;
+background: rgb(253 253 253 / 86%);
+backdrop-filter: blur(4px);
+}
+
+.ttlogout {
+  display: flex;
+  position: absolute;
+  color: white;
+  font-size: 15px;
+  width: 115px;
+  height: 42px;
+  left: 1610px;
+  top: 50px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+.ttprofilepic:hover {
+  background: rgb(0 182 255 / 80%);
+}
+
+.ttuser:hover, .ttprofilepic:hover {
+  color: rgb(0 182 255 / 80%);
+}
+
+.ttclosepicture {
+  position: fixed;
+  top: 250px;
+  left: 240px;
+  font-size: 16px;
+  color: white;
+}
+
+.submitPic {
+width: 176px;
+height: 37px;
+position: fixed;
+top: 200px;
+left: 260px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: large;
+line-height: 42px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #FFFFFF;
+}
+
+.updatePhoto {
+  margin-top: 5%;
+}
+
+input[type="text4" i] {
+  color: white;
+
+  padding: 1px 2px;
+  display: flex;
+  height: 40px;
+  width: 92%;
+  background: rgba(60, 62, 102, 0.55);
+}
+
+.keepitpg {
+  color: white;
+  padding-top: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 20px;
+}
+
+.ttclosepicture:hover {
+  color: rgba(168, 140, 197, 1);
 }

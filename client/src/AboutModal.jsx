@@ -9,7 +9,7 @@ const AboutModal = ({ handleClose, show, children }) => {
         <div className="ttGif">
         <img src="https://i.ibb.co/NpP1gst/Connect-with-us.gif" alt="Connect-with-us" border="0"/>
         </div>
-        <div className="ttclose" onClick={handleClose}>X</div>
+        <div className="ttclose" onClick={handleClose}>close</div>
       </section>
     </div>
   );

@@ -1,6 +1,6 @@
 let LOGIN = require('./config.js');
 
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var db = mysql.createConnection(LOGIN);
 
 db.connect();
