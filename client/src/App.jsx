@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import AboutModal from './AboutModal.jsx';
-import SignUpModal from './SignUpModal.jsx';
-import LogInModal from './LogInModal.jsx';
-import ProfilePicture from './ProfilePicture.jsx';
-import Username from './Username.jsx';
+import AboutModal from './tracysComponents/AboutModal.jsx';
+import SignUpModal from './tracysComponents/SignUpModal.jsx';
+import LogInModal from './tracysComponents/LogInModal.jsx';
+import ProfilePicture from './tracysComponents/ProfilePicture.jsx';
+import Username from './tracysComponents/Username.jsx';
 
 
 class App extends React.Component {
