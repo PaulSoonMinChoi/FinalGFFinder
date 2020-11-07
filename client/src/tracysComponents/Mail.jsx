@@ -6,8 +6,9 @@ class Mail extends React.Component {
     super(props);
     this.state = {
 
-    }
-  }
-}
+    }}
 
-export default Mail;
+
+
+  render()xport default Mail;
+

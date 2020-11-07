@@ -6,7 +6,7 @@ const controllers = {
       if (err) {
         res.status(400).send(err);
       } else {
-        res.status(200).json(results);
+        res.status(200).json('SUCCESSFUL SIGN UP');
       }
     })
   },

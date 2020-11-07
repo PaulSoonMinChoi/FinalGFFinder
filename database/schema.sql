@@ -14,6 +14,7 @@ CREATE TABLE users (
   aboutMe text(20000) NOT NULL,
   profilePicture varchar(255) NOT NULL,
   onlineStatus varchar(255) NOT NULL,
+  currentGame varchar(255) NOT NULL,
   PRIMARY KEY (id)
 );
 CREATE TABLE friendships (
@@ -22,10 +23,22 @@ CREATE TABLE friendships (
   friendId int NOT NULL,
   PRIMARY KEY (id)
 );
+CREATE TABLE teams (
+  ID int AUTO_INCREMENT,
+  teamName varchar(255) NOT NULL,
+  leaderId int NOT NULL,
+  PRIMARY KEY (ID)
+);
+CREATE TABLE teamMembers (
+  ID int AUTO_INCREMENT,
+  teamId int NOT NULL,
+  teamMemberId int NOT NULL,
+  PRIMARY KEY (ID)
+);
 CREATE TABLE invites (
   id int AUTO_INCREMENT,
-  senderId int NOT NULL, //115
-  recipient int NOT NULL, //110
+  senderId int NOT NULL,
+  recipientId int NOT NULL,
   PRIMARY KEY (id)
 );
 CREATE TABLE games (

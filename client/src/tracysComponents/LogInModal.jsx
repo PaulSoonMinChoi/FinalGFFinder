@@ -39,7 +39,7 @@ class LogInModal extends React.Component {
           this.setState({ successOrNot: true });
           this.props.isLoggedIn(this.state.successOrNot,
             {
-              id: results.data[0].id,
+              id: results.data[0].ID,
               firstname: results.data[0].firstname,
               lastname: results.data[0].lastname,
               username: results.data[0].username,
@@ -61,38 +61,48 @@ class LogInModal extends React.Component {
   render() {
     const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
 
-    return (
-      <div className={showHideClassName}>
-        <section className="log-in-modal-main">
-          <div className="ttlogintitle">Login to find some friends!</div>
-          <div className="logintext">
-            <form className="loginform" onSubmit={this.handleSubmitLogin} >
-              <label>
-                Email:
-                <br></br>
-                <input type="text2" name="email" onChange={this.handleChange} />
-              </label>
-              <br></br>
-              <label>
-                Password:
-                <br></br>
-                <input type="text2" name="password" onChange={this.handleChange} />
-                <br></br>
-              </label>
-              <div className="submit2">
-              <input type="submit" value="Submit" />
+    const showLogInModal = () => {
+      if (this.props.show) {
+        return (
+          <div>
+            <section className="log-in-modal-main">
+              <div className="ttlogintitle">Login to find some friends!</div>
+              <div className="logintext">
+                <form className="loginform" onSubmit={this.handleSubmitLogin} >
+                  <label>
+                    Email:
+                    <br></br>
+                    <input type="text2" name="email" onChange={this.handleChange} />
+                  </label>
+                  <br></br>
+                  <label>
+                    Password:
+                    <br></br>
+                    <input type="text2" name="password" onChange={this.handleChange} />
+                    <br></br>
+                  </label>
+                  <div className="submit2">
+                  <input type="submit" value="Submit" />
+                  </div>
+                </form>
               </div>
-            </form>
-
+              <div className="ttcloselogin" onClick={this.props.handleClose}>I changed my mind...</div>
+            </section>
+            <div className={showHideClassName} onClick={this.props.handleClose}></div>
           </div>
-
-          <div className="ttcloselogin" onClick={this.props.handleClose}>I changed my mind...</div>
-        </section>
+        );
+      } else {
+        return (
+          <div></div>
+        )
+      }
+    }
+    return (
+      <div>
+        {showLogInModal()}
       </div>
-    );
+    )
   }
-
-
 };
 
 export default LogInModal;

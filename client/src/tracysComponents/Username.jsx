@@ -33,27 +33,41 @@ class Username extends React.Component {
   render() {
     const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
 
-    return (
-      <div>
-        <div className={showHideClassName}>
-          <section className="username-modal-main">
-            <div className="keepitpg">Changing your username? Cool! Just update below! Keep it PG</div>
-            <br></br>
+    const showUsernameModal = () => {
+      if (this.props.show) {
+        return (
+          <div>
+            <section className="username-modal-main">
+              <div className="keepitpg">Changing your username? Cool! Just update below! Keep it PG</div>
+              <br></br>
 
-            <form className="updatePhoto" onSubmit={this.change} >
-              <label>
-                NEW USERNAME:
-                <br></br>
-                <input type="text4" name="username" onChange={this.handleChange} />
-              </label>
-              <div className="submitPic">
-                <input type="submit" value="Submit" />
-              </div>
-            </form>
-            <div className="ttclosepicture" onClick={this.props.handleClose}>I changed my mind...</div>
-          </section>
-        </div>
+              <form className="updatePhoto" onSubmit={this.change} >
+                <label>
+                  NEW USERNAME:
+                  <br></br>
+                  <input type="text4" name="username" onChange={this.handleChange} />
+                </label>
+                <div className="submitPic">
+                  <input type="submit" value="Submit" />
+                </div>
+              </form>
+              <div className="ttclosepicture" onClick={this.props.handleClose}>I changed my mind...</div>
+            </section>
+            <div className={showHideClassName} onClick={this.props.handleClose}></div>
+          </div>
+        )
+      } else {
+        return(
+          <div></div>
+        )
+      }
+    }
+
+    return(
+      <div>
+        {showUsernameModal()}
       </div>
+
     )
   }
 }

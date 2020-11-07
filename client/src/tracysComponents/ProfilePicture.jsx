@@ -34,25 +34,38 @@ class ProfilePicture extends React.Component {
   render() {
     const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
 
+    const showProfilePictureModal = () => {
+      if (this.props.show) {
+        return (
+          <div>
+            <section className="picture-modal-main">
+              <div className="keepitpg">Changing your profile picture? COOL! Just upload an html/jpg/png link below! Try to keep it PG</div>
+
+              <form className="updatePhoto" onSubmit={this.change} >
+                <label>
+                  HTML/JPG/PNG LINK:
+                  <br></br>
+              <input type="text4" name="profilePicture" onChange={this.handleChange} />
+                </label>
+                <div className="submitPic">
+                  <input type="submit" value="Submit"  />
+                </div>
+              </form>
+              <div className="ttclosepicture" onClick={this.props.handleClose}>I changed my mind...</div>
+            </section>
+            <div className={showHideClassName} onClick={this.props.handleClose}></div>
+          </div>
+        )
+      } else {
+        return (
+          <div></div>
+        )
+      }
+    }
+
     return (
       <div>
-        <div className={showHideClassName}>
-          <section className="picture-modal-main">
-            <div className="keepitpg">Changing your profile picture? COOL! Just upload an html/jpg/png link below! Try to keep it PG</div>
-
-            <form className="updatePhoto" onSubmit={this.change} >
-              <label>
-                HTML/JPG/PNG LINK:
-                <br></br>
-            <input type="text4" name="profilePicture" onChange={this.handleChange} />
-              </label>
-              <div className="submitPic">
-                <input type="submit" value="Submit"  />
-              </div>
-            </form>
-            <div className="ttclosepicture" onClick={this.props.handleClose}>I changed my mind...</div>
-          </section>
-        </div>
+        {showProfilePictureModal()}
       </div>
     )
   }

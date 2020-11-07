@@ -16,6 +16,7 @@ class SignUpModal extends React.Component {
       aboutMe: '',
       profilePicture: 'https://i.ibb.co/ky1VHH6/Daco-4420061.png',
       onlineStatus: 'offline',
+      currentGame: '',
       successOrNot: ''
     }
     this.handlePlayerTypeChange = this.handlePlayerTypeChange.bind(this);
@@ -53,7 +54,8 @@ class SignUpModal extends React.Component {
       playertype: this.state.playertype,
       aboutMe: this.state.aboutMe,
       profilePicture: this.state.profilePicture,
-      onlineStatus: this.state.onlineStatus
+      onlineStatus: this.state.onlineStatus,
+      currentGame: this.state.currentGame
     }
     axios.get('/checkEmailExists', { params: options })
       .then((results) => {
@@ -79,83 +81,95 @@ class SignUpModal extends React.Component {
   render() {
     const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
 
+    const showSignUpModal = () => {
+      if (this.props.show) {
+        return (
+          <div>
+              <section className="sign-up-modal-main">
+                <div className="ttsignupTitle">Sign up to find some friends!</div>
+                <br></br>
+                <div className="annoyingform">
+                  <form className="ttsignupform" onSubmit={this.handleSubmit}>
+                    <label>
+                      First Name:
+                      <br></br>
+                      <input className="ttname" type="abotext" name="firstname" onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+                    <label>
+                      Last Name:
+                      <br></br>
+                      <input className="ttname" type="abouttext" name="lastname" onChange={this.handleChange} />
+                    </label>
+
+                    <br></br>
+                    <label>
+                      Username:
+                      <br></br>
+                      <input className="textinput" type="abouttext" name="username" onChange={this.handleChange} />
+                    </label>
+
+                    <br></br>
+                    <label>
+                      Email: {this.state.successOrNot}
+                      <br></br>
+                      <input className="textinput" type="abouttext" name="email" onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+                    <label>
+                      Password:
+                      <br></br>
+                      <input className="textinput" type="abouttext" name="password" onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+                    <label>
+                      Region:
+                    <select value={this.state.region} onChange={this.handleRegionChange}>
+                        <option value="NA">NA</option>
+                        <option value="UK">United Kingom</option>
+                        <option value="LAN">LAN</option>
+                        <option value="Asia">Asia</option>
+                      </select>
+                    </label>
+                    <br></br>
+                    <label>
+                      Player Type:
+                    <select value={this.state.playertype} onChange={this.handlePlayerTypeChange}>
+                        <option value="casual">Casual</option>
+                        <option value="hardcorerank">Hardcore Rank</option>
+                        <option value="learning">Learning</option>
+                      </select>
+                    </label>
+                    <br></br>
+                    <label>
+                      About Me:
+                      <br></br>
+                      <input className="inputtext" className="aboutme" type="abouttext" name="aboutMe" onChange={this.handleChange} />
+                    </label>
+                    <br></br>
+
+                    <input type="submit" value="Submit" />
+                  </form>
+                  </div>
+
+                <div className="ttclosesignup" onClick={this.props.handleClose}>I changed my mind...</div>
+              </section>
+
+              <div className={showHideClassName} onClick={this.props.handleClose}></div>
+          </div>
+        );
+      } else {
+        return (
+          <div></div>
+        )
+      }
+    }
+
     return (
       <div>
-        <div className={showHideClassName}>
-          <section className="sign-up-modal-main">
-            <div className="ttsignupTitle">Sign up to find some friends!</div>
-            <br></br>
-            <div>
-              <form classname="ttsignupform" onSubmit={this.handleSubmit}>
-                <label>
-                  First Name:
-                  <br></br>
-                  <input classname="ttname" type="text" name="firstname" onChange={this.handleChange} />
-                </label>
-                <br></br>
-                <label>
-                  Last Name:
-                  <br></br>
-                  <input classname="ttname" type="text" name="lastname" onChange={this.handleChange} />
-                </label>
-
-                <br></br>
-                <label>
-                  Username:
-                  <br></br>
-                  <input classname="textinput" type="text" name="username" onChange={this.handleChange} />
-                </label>
-
-                <br></br>
-                <label>
-                  Email: {this.state.successOrNot}
-                  <br></br>
-                  <input classname="textinput" type="text" name="email" onChange={this.handleChange} />
-                </label>
-                <br></br>
-                <label>
-                  Password:
-                  <br></br>
-                  <input classname="textinput" type="text" name="password" onChange={this.handleChange} />
-                </label>
-                <br></br>
-                <label>
-                  Region:
-                <select value={this.state.region} onChange={this.handleRegionChange}>
-                    <option value="NA">NA</option>
-                    <option value="UK">United Kingom</option>
-                    <option value="LAN">LAN</option>
-                    <option value="Asia">Asia</option>
-                  </select>
-                </label>
-                <br></br>
-                <label>
-                  Player Type:
-                <select value={this.state.playertype} onChange={this.handlePlayerTypeChange}>
-                    <option value="casual">Casual</option>
-                    <option value="hardcorerank">Hardcore Rank</option>
-                    <option value="learning">Learning</option>
-                  </select>
-                </label>
-                <br></br>
-                <label>
-                  About Me:
-                  <br></br>
-                  <input classname="inputtext" className="aboutme" type="text" name="aboutMe" onChange={this.handleChange} />
-                </label>
-                <br></br>
-
-                <input type="submit" value="Submit" />
-              </form>
-            </div>
-
-            <div className="ttclosesignup" onClick={this.props.handleClose}>I changed my mind...</div>
-          </section>
-        </div>
-
+        {showSignUpModal()}
       </div>
-
-    );
+    )
   };
 };
 
