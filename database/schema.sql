@@ -41,6 +41,22 @@ CREATE TABLE invites (
   recipientId int NOT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE addfriends (
+  ID int AUTO_INCREMENT,
+  senderId int NOT NULL,
+  recipientId int NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE acceptedInvites (
+  ID int AUTO_INCREMENT,
+  senderId int NOT NULL,
+  recipientId int NOT NULL,
+  PRIMARY KEY (id)
+);
+
+
 CREATE TABLE games (
   ID int AUTO_INCREMENT,
   gameName varchar(255) NOT NULL,
