@@ -309,7 +309,12 @@ class App extends React.Component {
               <div className="ttnav">
                 <div className="ttlogo"></div>
                 <img src="https://i.ibb.co/k9ST7HW/Copy-of-Copy-of-Untitled-1.gif" alt="Copy-of-Copy-of-Untitled-1" border="0" className="ttsearchbar" />
+                <a className="fortnite" href="https://www.epicgames.com/fortnite/en-US/home">here</a>
                 {/* <div className="ttmail"></div> */}
+                <a className="league" href="https://na.leagueoflegends.com/en-us/">here</a>
+                <a className="minecraft" href="https://www.minecraft.net/en-us">here</a>
+                <a className="overwatch" href="https://playoverwatch.com/en-us/">here</a>
+                <a className="apex" href="https://www.ea.com/games/apex-legends">here</a>
                 <div className="ttAboutUs">
                   <a className="ttabout" onClick={this.showAboutModal}>About Us</a>
                 </div>

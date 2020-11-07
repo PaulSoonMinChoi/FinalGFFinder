@@ -606,6 +606,47 @@ input[type="text4" i] {
   opacity: 1.0 !important;
 }
 
+.fortnite {
+  position: fixed;
+  top: 40%;
+  left: 32.5%;
+  text-decoration: none;
+  opacity: 0;
+}
+
+.league {
+  top: 40%;
+  position: fixed;
+  left: 36.5%;
+  text-decoration: none;
+  opacity: 0;
+}
+
+.minecraft {
+  position: fixed;
+  top: 40%;
+  left: 40.5%;
+  text-decoration: none;
+  opacity: 0;
+}
+
+.overwatch {
+  position: fixed;
+  left: 44.5%;
+  top: 40%;
+  text-decoration: none;
+  opacity: 0;
+}
+
+.apex {
+  position: fixed;
+  top: 40%;
+  left: 48.5%;
+  text-decoration: none;
+  opacity: 0;
+}
+
+
 /* .appfooter {
   position: absolute;
   width: 100%;
