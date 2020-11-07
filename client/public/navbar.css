@@ -118,7 +118,7 @@ color: #FFFFFF;
   position: absolute;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
+  height: 55%;
   top: 0;
   left: 0;
 }
@@ -137,10 +137,10 @@ color: #FFFFFF;
 
 .modal-main {
   position:fixed;
-  background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%);
+  /* background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%); */
   width: 600px;
   height: 350px;
-  top: 50%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 102;
@@ -566,6 +566,44 @@ input[type="text4" i] {
 .VjlsF {
   margin-right: 3%;
   width: 35%;
+}
+
+.ourPhotos{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+.pauls, .tracys, .justins {
+  margin: 2%;
+  display: flex;
+  opacity: 0.5;
+
+}
+
+.ourPhotosDiv {
+  width: 15%;
+}
+
+.interestingbio{
+  height: auto;
+  width: 80%;
+  top: 50%;
+  margin-left: 1%;
+  margin-top: 1%;
+  display: flex;
+}
+
+.moreaboutus {
+  color: white;
+  background: linear-gradient(180deg, #080327 0%, rgba(35, 0, 51, 0.890647) 43.23%, rgba(8, 12, 47, 0.87) 75%, rgba(18, 18, 83, 0.890647) 84.37%);
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+.pauls:hover, .tracys:hover, .justins:hover {
+  opacity: 1.0 !important;
 }
 
 /* .appfooter {
