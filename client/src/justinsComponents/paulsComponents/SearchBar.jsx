@@ -287,7 +287,6 @@ const PlayerEntryTitle = styled.span`
 
 const Buttons = styled.button`
   background: linear-gradient(180deg, #B747FC 46.21%, rgba(255, 255, 255, 0) 146.21%), #1C2331;
-  box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
   border-radius: 65px;
   height: 32px;
   width: 68px;
@@ -296,13 +295,10 @@ const Buttons = styled.button`
   margin-right: 10px;
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
-  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  -webkit-transition-property: transform;
   transition-property: transform;
   &:before {
     pointer-events: none;
