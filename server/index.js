@@ -5,7 +5,7 @@ const router = require('./router.js');
 const cors = require('cors');
 const db = require('../database/index.js');
 const model = require('../database/models.js');
-
+//hello muddah puker
 const app = express();
 const PORT = 3000;
 app.use(cors());
