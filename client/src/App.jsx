@@ -5,6 +5,8 @@ import SignUpModal from './tracysComponents/SignUpModal.jsx';
 import LogInModal from './tracysComponents/LogInModal.jsx';
 import ProfilePicture from './tracysComponents/ProfilePicture.jsx';
 import Username from './tracysComponents/Username.jsx';
+import Mail from './tracysComponents/Mail.jsx';
+import AppBody from './justinsComponents/AppBody.jsx';
 
 
 class App extends React.Component {
@@ -17,6 +19,7 @@ class App extends React.Component {
       showPicture: false,
       isLoggedIn: false,
       showUsername: false,
+      showMail: false,
       currentUser: {
         id: '',
         firstname: '',
@@ -121,7 +124,6 @@ class App extends React.Component {
   }
 
   showUsernameModal() {
-    console.log('clicked')
     this.setState({ showUsername: true });
     if (this.state.showSignUp === true) {
       this.setState({ showSignUp: false });
@@ -132,14 +134,38 @@ class App extends React.Component {
     if (this.state.showLogIn === true) {
       this.setState({ showLogIn: false })
     }
-    if (this.state.showPictureModal === true) {
-      this.setState({ showPictureModal: false })
+    if (this.state.showPicture === true) {
+      this.setState({ showPicture: false })
     }
   }
 
   hideUsernameModal() {
     this.setState({ showUsername: false });
   }
+
+  showMailModal() {
+    this.setState({ showMail: true });
+    if (this.state.showSignUp === true) {
+      this.setState({ showSignUp: false });
+    }
+    if (this.state.show === true) {
+      this.setState({ show: false });
+    }
+    if (this.state.showLogIn === true) {
+      this.setState({ showLogIn: false })
+    }
+    if (this.state.showPicture === true) {
+      this.setState({ showPicture: false })
+    }
+    if (this.state.showUsername === true) {
+      this.setState({ showUsername: false })
+    }
+  }
+
+  hideMailModal() {
+    this.setState({ showMail: false });
+  }
+
 
   logIn(val, info) {
     this.setState({
@@ -163,6 +189,7 @@ class App extends React.Component {
   changePicture(pic) {
     this.setState({
       currentUser:{
+        id: this.state.currentUser.id,
         firstname: this.state.currentUser.firstname,
         lastname: this.state.currentUser.lastname,
         username: this.state.currentUser.username,
@@ -186,6 +213,7 @@ class App extends React.Component {
 
   changeUsername(name) {
     let options = {
+      id: this.state.currentUser.id,
       firstname: this.state.currentUser.firstname,
       lastname: this.state.currentUser.lastname,
       username: name,
@@ -199,6 +227,7 @@ class App extends React.Component {
     }
     this.setState({
       currentUser:{
+        id: options.id,
         firstname: options.firstname,
         lastname: options.lastname,
         username: name,
@@ -219,16 +248,6 @@ class App extends React.Component {
       .catch(err => console.log(err))
   }
 
-  showMailModal() {
-
-  }
-
-  hideMailModal() {
-
-  }
-
-  getMail(){}
-
 
   render() {
     const loggedin = this.state.isLoggedIn;
@@ -238,27 +257,42 @@ class App extends React.Component {
         {loggedin ?
           (
             <div>
-              <AboutModal id="modal" show={this.state.show} handleClose={this.hideAboutModal} onClick={this.showAboutModal} />
+              <AboutModal className="modal" show={this.state.show} handleClose={this.hideAboutModal} onClick={this.showAboutModal} />
 
-              <SignUpModal id="modal" show={this.state.showSignUp} handleClose={this.hideSignUpModal} onClick={this.showSignUpModal} />
+              <SignUpModal className="modal" show={this.state.showSignUp} handleClose={this.hideSignUpModal} onClick={this.showSignUpModal} />
 
-              <ProfilePicture id="modal" show={this.state.showPicture} handleClose={this.hidePictureModal} onClick={this.showPictureModal} profilePicture={this.changePicture}/>
+              <ProfilePicture className="modal" show={this.state.showPicture} handleClose={this.hidePictureModal} onClick={this.showPictureModal} profilePicture={this.changePicture}/>
 
-              <Username id="modal" show={this.state.showUsername} handleClose={this.hideUsernameModal} onClick={this.showUsernameModal} username={this.changeUsername}/>
+              <Username className="modal" show={this.state.showUsername} handleClose={this.hideUsernameModal} onClick={this.showUsernameModal} username={this.changeUsername}/>
 
+              <Mail className="modal" show={this.state.showMail} handleClose={this.hideMailModal} onClick={this.showMailModal} id={this.state.currentUser.id}/>
+
+              <div className="backdropapp">
 
               <div className="ttnav">
                 <div className="ttlogo"></div>
                 <img src="https://i.ibb.co/k9ST7HW/Copy-of-Copy-of-Untitled-1.gif" alt="Copy-of-Copy-of-Untitled-1" border="0" className="ttsearchbar" />
-                <div className="ttmail"></div>
+                <a className="fortnite" href="https://www.epicgames.com/fortnite/en-US/home">here</a>
+                {/* <div className="ttmail"></div> */}
+                <a className="league" href="https://na.leagueoflegends.com/en-us/">here</a>
+                <a className="minecraft" href="https://www.minecraft.net/en-us">here</a>
+                <a className="overwatch" href="https://playoverwatch.com/en-us/">here</a>
+                <a className="apex" href="https://www.ea.com/games/apex-legends">here</a>
+                <div className="ttmail" onClick={this.showMailModal}></div>
                 <div className="ttAboutUs">
-                  <a className="ttabout" onClick={this.showAboutModal}><div className="ttmail" onClick={this.showMailModal}></div>About Us</a>
+                  <a className="ttabout" onClick={this.showAboutModal}>About Us</a>
                 </div>
                 <div className="ttuser" onClick={this.showUsernameModal}>
                   <a className="ttuserprof">{this.state.currentUser.username}</a>
                 </div>
                 <img className="ttprofilepic" src={this.state.currentUser.profilePicture} onClick={this.showPictureModal} />
                 <div className="ttlogout" onClick={this.handleLogout}>Log out</div>
+
+              </div>
+              <AppBody currentUser={this.state.currentUser}/>
+
+              {/* <div className="appfooter">
+                </div> */}
 
               </div>
             </div>
@@ -269,16 +303,24 @@ class App extends React.Component {
 
             (
             <div>
-              <AboutModal id="modal" show={this.state.show} handleClose={this.hideAboutModal} onClick={this.showAboutModal} />
+              <AboutModal className="modal" show={this.state.show} handleClose={this.hideAboutModal} onClick={() => {this.showAboutModal}} />
 
-              <SignUpModal id="modal" show={this.state.showSignUp} handleClose={this.hideSignUpModal} onClick={this.showSignUpModal} />
+              <SignUpModal className="modal" show={this.state.showSignUp} handleClose={this.hideSignUpModal} onClick={this.showSignUpModal} />
 
-              <LogInModal id="modal" show={this.state.showLogIn} handleClose={this.hideLogInModal} onClick={this.showLogInModal} isLoggedIn={this.logIn} />
+              <LogInModal className="modal" show={this.state.showLogIn} handleClose={this.hideLogInModal} onClick={() => {this.showLogInModal}} isLoggedIn={this.logIn} />
+
+              <div className="backdropapp">
+
 
               <div className="ttnav">
                 <div className="ttlogo"></div>
                 <img src="https://i.ibb.co/k9ST7HW/Copy-of-Copy-of-Untitled-1.gif" alt="Copy-of-Copy-of-Untitled-1" border="0" className="ttsearchbar" />
+                <a className="fortnite" href="https://www.epicgames.com/fortnite/en-US/home">here</a>
                 {/* <div className="ttmail"></div> */}
+                <a className="league" href="https://na.leagueoflegends.com/en-us/">here</a>
+                <a className="minecraft" href="https://www.minecraft.net/en-us">here</a>
+                <a className="overwatch" href="https://playoverwatch.com/en-us/">here</a>
+                <a className="apex" href="https://www.ea.com/games/apex-legends">here</a>
                 <div className="ttAboutUs">
                   <a className="ttabout" onClick={this.showAboutModal}>About Us</a>
                 </div>
@@ -289,6 +331,12 @@ class App extends React.Component {
                   <a className="ttloginhere" onClick={this.showLogInModal}>Have an accout? Log in!</a>
                 </div>
               </div>
+
+              <AppBody currentUser={this.state.currentUser}/>
+
+               {/* <div className="appfooter">
+                </div> */}
+            </div>
             </div>
 
     )

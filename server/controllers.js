@@ -6,7 +6,7 @@ const controllers = {
       if (err) {
         res.status(400).send(err);
       } else {
-        res.status(200).json(results);
+        res.status(200).json('SUCCESSFUL SIGN UP');
       }
     })
   },
@@ -73,6 +73,16 @@ const controllers = {
 
   updateUsername: (req,res) => {
     models.updateUsername(req.body, (err, results) => {
+      if (err) {
+        res.status(400).send(err);
+      } else {
+        res.status(200).json(results);
+      }
+    })
+  },
+
+  getMail: (req,res) => {
+    models.getMail(req.params.id, (err, results) => {
       if (err) {
         res.status(400).send(err);
       } else {
