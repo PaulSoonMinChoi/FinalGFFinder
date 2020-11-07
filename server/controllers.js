@@ -79,6 +79,16 @@ const controllers = {
         res.status(200).json(results);
       }
     })
+  },
+
+  getMail: (req,res) => {
+    models.getMail(req.params.id, (err, results) => {
+      if (err) {
+        res.status(400).send(err);
+      } else {
+        res.status(200).json(results);
+      }
+    })
   }
 
 };

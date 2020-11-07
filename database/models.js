@@ -52,6 +52,10 @@ const models = {
   //   })
   // },
 
+  // getMail: (data, callback) => {
+  //   db.query(`SELECT * FROM `)
+  // }
+
   updateUsername: (data, callback) => {
     db.query(`UPDATE users SET username = '${data.username}' WHERE email = '${data.email}'`, (err, results) => {
       console.log(results);

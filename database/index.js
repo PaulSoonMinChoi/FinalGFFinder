@@ -1,9 +1,6 @@
 const mysql = require('mysql');
-const connection = mysql.createConnection({
-  user: 'root',
-  password: '',
-  database: 'mvp',
-});
+const LOGIN = require ('./config.js');
+const connection = mysql.createConnection(LOGIN);
 connection.connect();
 connection.query('SELECT 1 + 1 AS solution', (err, rows) => {
   if (err) throw err;

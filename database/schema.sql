@@ -36,7 +36,7 @@ CREATE TABLE teamMembers (
   PRIMARY KEY (ID)
 );
 CREATE TABLE invites (
-  id int AUTO_INCREMENT,
+  ID int AUTO_INCREMENT,
   senderId int NOT NULL,
   recipientId int NOT NULL,
   PRIMARY KEY (id)

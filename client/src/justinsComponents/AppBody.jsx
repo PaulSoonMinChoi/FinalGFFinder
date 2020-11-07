@@ -16,7 +16,7 @@ export default class AppBody extends React.Component {
     //styled components
 
     return (
-      <div>
+      <div className="appcenter">
         <GameMenu />
         <CenterModule currentUser={this.props.currentUser}/>
         <FriendsAndTeams currentUser={this.props.currentUser}/>

@@ -11,9 +11,11 @@ const MainContainer = styled.div`
   display: flex;
 `;
 
+//width: 280px;
 const ChatBoxContainer = styled.div`
 margin-top: 24px;
-width: 280px;
+margin-right: 3.5%;
+width: 35%;
 height: 425px;
 background: linear-gradient(0deg, rgba(7, 1, 12, 0.51), rgba(7, 1, 12, 0.51)), #4C7FE6;
 box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);

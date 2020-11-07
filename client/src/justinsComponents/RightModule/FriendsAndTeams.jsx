@@ -81,7 +81,7 @@ export default class FriendsList extends React.Component {
     };
 
     return (
-      <div>
+      <div className="appFriendsandTeams">
         <button onClick={() => {this.handleClickFriendsOrTeamsButton()}}>{friendsOrTeamButton}</button>
         {teamsOrFriends}
       </div>

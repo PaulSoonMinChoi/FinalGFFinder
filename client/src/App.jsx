@@ -320,9 +320,10 @@ class App extends React.Component {
                   <a className="ttloginhere" onClick={this.showLogInModal}>Have an accout? Log in!</a>
                 </div>
               </div>
+
               <AppBody currentUser={this.state.currentUser}/>
 
-              {/* <div className="appfooter">
+               {/* <div className="appfooter">
                 </div> */}
             </div>
             </div>

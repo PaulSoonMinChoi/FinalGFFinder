@@ -93,7 +93,7 @@ class SignUpModal extends React.Component {
                     <label>
                       First Name:
                       <br></br>
-                      <input className="ttname" type="abotext" name="firstname" onChange={this.handleChange} />
+                      <input className="ttname" type="abouttext" name="firstname" onChange={this.handleChange} />
                     </label>
                     <br></br>
                     <label>

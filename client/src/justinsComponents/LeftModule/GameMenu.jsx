@@ -41,12 +41,17 @@ export default class GameMenu extends React.Component {
     }
 
     return (
-      <div>
-        <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Action</h3>
-        <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Adventure</h3>
-        <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Shooter</h3>
-        <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >MMORPG</h3>
-        {modal}
+      <div className="GameMenu">
+
+
+        <div>
+          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >Action</h3>
+          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >Adventure</h3>
+          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >Shooter</h3>
+          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >MMORPG</h3>
+          {modal}
+        </div>
+
       </div>
     )
   }
