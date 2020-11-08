@@ -22,10 +22,10 @@ export default class FriendsList extends React.Component {
     this.getFriends(this.props.currentUser.id);
     console.log(this.props.currentUser.id);
     const currentUserId = this.props.currentUser.id;
-    setInterval(
-      () => {this.getFriends(currentUserId)},
-      5000
-    );
+    // setInterval(
+    //   () => {this.getFriends(currentUserId)},
+    //   5000
+    // );
   }
 
   //get request for friends

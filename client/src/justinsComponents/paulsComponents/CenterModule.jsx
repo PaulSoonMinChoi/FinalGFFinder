@@ -34,7 +34,7 @@ const CenterModule = ({ currentUser, passedDownGame }) => {
   return (
     <MainContainer>
       <SearchBar users={users} currentGame={currentGame} setcurrentGame={setcurrentGame} currentUser={currentUser} />
-      <ChatBox currentGame={currentGame} currentUser={currentUser} />
+      <ChatBox users={users} currentGame={currentGame} currentUser={currentUser} />
     </MainContainer>
   );
 }
