@@ -19,10 +19,6 @@ export default class FriendsList extends React.Component {
 
   //component did mount with get request for friends
   componentDidMount() {
-<<<<<<< HEAD
-    // console.log(this.props.currentUser)
-=======
->>>>>>> master
     this.getFriends(this.props.currentUser.id)
   }
 
