@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import faker from 'faker';
 
@@ -115,7 +115,68 @@ const SearchBarInput = styled.input`
   }
 `;
 
-const ChatBox = ({ currentGame, users }) => {
+const Button = styled.button`
+  background: linear-gradient(180deg, #B747FC 46.21%, rgba(255, 255, 255, 0) 146.21%), #1C2331;
+  box-shadow: inset 0px 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 65px;
+  height: 32px;
+  width: 68px;
+  border: none;
+  text-align: center;
+  outline: none;
+  margin-right: 10px;
+  display: block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  &:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+    /* W3C */
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+  }
+  &:hover {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    cursor: pointer;
+    background-color: #DFB4F9;
+  }
+  &:hover:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+`;
+
+const ButtonContainer = styled.div`
+  padding-top: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
+
+  const [chatInput, setChatInput] = useState('');
+  const [usersChats, setUsersChats] = useState([]);
 
   const RoomName = () => {
     if (currentGame === '') {
@@ -123,6 +184,16 @@ const ChatBox = ({ currentGame, users }) => {
     } else {
       return currentGame;
     }
+  }
+
+  const handleChange = (e) => {
+    setChatInput(e.target.value);
+  }
+
+  const addChats = (chat) => {
+    let newArr = usersChats.slice(0);
+    newArr.push(chat);
+    setUsersChats(newArr);
   }
 
   const Chats = () => {
@@ -229,6 +300,14 @@ const ChatBox = ({ currentGame, users }) => {
               )
             }
           })}
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           </ChatList>
         </ChatsContainer>
       )
@@ -239,7 +318,10 @@ const ChatBox = ({ currentGame, users }) => {
     <ChatBoxContainer>
       <LobbySign>{RoomName()} Chat Room</LobbySign>
       {Chats()}
-      <SearchBarInput active={currentGame} />
+      <SearchBarInput active={currentGame} onChange={(e) => handleChange(e)} value={chatInput} />
+      <ButtonContainer>
+        <Button onClick={() => addChats({username: currentUser.username, chat: chatInput})}>Send</Button>
+      </ButtonContainer>
     </ChatBoxContainer>
   )
 }
