@@ -29,7 +29,10 @@ export default function Game(props) {
   return (
     <StyledGame>
       <StyledImageContainer>
-        <StyledImage src={props.game.coverImage} />
+        <StyledImage src={props.game.coverImage} onClick={(e) => {
+          props.handleGameSelect(props.game.gameName);
+          props.handleClickGamesModal(e);
+        }} />
       </StyledImageContainer>
       <h3>{props.game.gameName}</h3>
     </StyledGame>

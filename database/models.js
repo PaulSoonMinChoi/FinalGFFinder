@@ -42,23 +42,8 @@ const models = {
     })
   },
 
-  // removeMail: (data, callback) => {
-  //   db.query(`DELETE FROM users WHERE id=${data.id}`, (err, results) => {
-  //     if (err) {
-  //       callback(err);
-  //     } else {
-  //       callback(null, results);
-  //     }
-  //   })
-  // },
-
-  // getMail: (data, callback) => {
-  //   db.query(`SELECT * FROM `)
-  // }
-
-  updateUsername: (data, callback) => {
-    db.query(`UPDATE users SET username = '${data.username}' WHERE email = '${data.email}'`, (err, results) => {
-      console.log(results);
+  removeMail: (data, callback) => {
+    db.query(`DELETE FROM invites WHERE senderId=${data.senderId} AND recipientId=${data.recipientId}`, (err, results) => {
       if (err) {
         callback(err);
       } else {
@@ -66,6 +51,93 @@ const models = {
       }
     })
   },
+
+  removeFriends: (data, callback) => {
+    db.query(`DELETE FROM addfriends WHERE id=${data.id}`, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  getMail: (data, callback) => {
+    db.query(`SELECT * FROM invites WHERE recipientId=${data.id}`, (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  getFriends: (data, callback) => {
+    db.query(`SELECT * FROM addfriends WHERE recipientId=${data.id}`, (err, results) => {
+      if (err) {
+        console.log(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  updateUsername: (data, callback) => {
+    db.query(`UPDATE users SET username = '${data.username}' WHERE email = '${data.email}'`, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  getUser: (data, callback) => {
+    let test = `SELECT * from users, addfriends WHERE users.ID=${data.senderId}`;
+    db.query(test, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  getInvites: (data, callback) => {
+    let test = `SELECT * from users, invites WHERE users.ID=${data.senderId}`;
+    db.query(test, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  acceptInvites: (data, callback) => {
+    let test = `INSERT INTO acceptedInvites (senderId, recipientId) VALUES ('${data.senderId}', '${data.recipientId}')`;
+    db.query(test, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+  acceptFriend: (data, callback) => {
+    let test = `INSERT INTO friendships (userId, friendId) VALUES ('${data.userId}', '${data.friendId}')`;
+    db.query(test, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
+  },
+
+
+
   // <----- JUSTINS MODELS ---->
   getGamesList: (type, callback) => {
     const queryString = `SELECT * FROM games WHERE type = '${type}' LIMIT 10;`
@@ -81,6 +153,7 @@ const models = {
   getFriendsList: (userId, callback) => {
     const queryString = `select * from friendships inner join users on friendships.friendId = users.ID where friendships.userId = ${userId} order by lastname;`;
     db.query(queryString, (err, results) => {
+      //hi tracy
       if (err) {
         callback(err);
       } else {
