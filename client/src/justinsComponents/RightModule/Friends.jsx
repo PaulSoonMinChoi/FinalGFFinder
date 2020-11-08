@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import Friend from './Friend.jsx';
-import FriendDetailModal from './FriendDetailModal.jsx';
+import FriendDetailModal from './NewFriendDetailModal.jsx';
 
 export default class Friends extends React.Component {
   constructor(props) {
@@ -43,6 +43,7 @@ export default class Friends extends React.Component {
     const StyledFriends = styled.div`
       display: flex;
       flex-wrap: wrap;
+      margin-top: 20px;
     `;
 
     //conditional rendering

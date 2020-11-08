@@ -23,7 +23,7 @@ export default class FriendDetailModal extends React.Component {
       status = <p>Offline.</p>
     }
     return (
-      <Modal show={this.props.show} size="xl" centered="true">
+      <Modal show={this.props.show} size="xl" centered="true" className="modal">
         <Modal.Header>
           <Modal.Title>
             {this.props.friendDetails[0].userName}'s Profile
