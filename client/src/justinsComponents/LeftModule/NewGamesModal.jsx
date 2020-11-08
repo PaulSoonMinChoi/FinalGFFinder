@@ -3,6 +3,16 @@ import styled from 'styled-components';
 import GamesList from './GamesList.jsx';
 
 
+const BlockingDiv = styled.div`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
+  z-index: 9001;
+`;
+
 const CenteredModal = styled.div`
   position: fixed;
   width: 90%;
@@ -14,7 +24,7 @@ const CenteredModal = styled.div`
   background: linear-gradient(180deg, #3B0069 0%, rgba(255, 255, 255, 0) 100%), #2853A5;
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
   border-radius: 10px;
-  z-index: 120;
+  z-index: 9002;
   ::-webkit-scrollbar {display:none;}
   text-align: center;
 `;
@@ -78,15 +88,17 @@ const Buttons = styled.button`
 export default function GamesModal(props) {
 
   return (
-    <CenteredModal>
-      <GamesListContents>
-        <h1>GAME TYPE: {props.type}</h1>
-        <CenteredGamesList>
-          <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
-          <GamesList type={props.type} handleClickGamesModal={props.handleClickGamesModal} />
-          <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
-        </CenteredGamesList>
-      </GamesListContents>
-    </CenteredModal>
+    <BlockingDiv>
+      <CenteredModal>
+        <GamesListContents>
+          <h1>GAME TYPE: {props.type}</h1>
+          <CenteredGamesList>
+            <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
+            <GamesList type={props.type} handleClickGamesModal={props.handleClickGamesModal} />
+            <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
+          </CenteredGamesList>
+        </GamesListContents>
+      </CenteredModal>
+    </BlockingDiv>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import TeamMember from './TeamMember.jsx';
 
 const BlockingDiv = styled.div`
   position: fixed;
@@ -101,39 +102,25 @@ const Buttons = styled.button`
   }
 `;
 
-export default function FriendDetailModal(props) {
+export default function TeamDetailModal (props) {
 
-  let status;
-  if (props.friendDetails[0].onlineStatus === 'online') {
-    status = <p>Online!</p>
-  } else {
-    status = <p>Offline.</p>
-  }
+    //map members
+    const {teamDetails} = props;
+    const teamMemberBlocks = teamDetails.map((member) => {
+      return <TeamMember key={member.teamMemberId} member={member} />
+    })
 
   return (
     <BlockingDiv>
       <CenteredModal>
         <FriendContents>
-          <FriendUserName>{props.friendDetails[0].username}'s Profile</FriendUserName>
+          <FriendUserName>Team Information For {props.teamDetails[0].teamName}:</FriendUserName>
           <CenteredFriendDetails>
-            <StyledImage src={props.friendDetails[0].profilePicture}/>
-            <FlexBoxedDetails>
-              <BlockedDetails>
-                <h3>Status:</h3>
-                {status}
-              </BlockedDetails>
-              <BlockedDetails>
-                <h3>Level:</h3>
-                <p>{props.friendDetails[0].playertype}</p>
-              </BlockedDetails>
-              <BlockedDetails>
-                <h3>Region:</h3>
-                <p>{props.friendDetails[0].region}</p>
-              </BlockedDetails>
-            </FlexBoxedDetails>
-            <h3>About {props.friendDetails[0].userName}:</h3>
-            <p>{props.friendDetails[0].aboutMe}</p>
-            <Buttons onClick={(e) => {props.handleClickFriendDetail(e)}}>Close</Buttons>
+            <h3>Team Leader:</h3>
+            <p>{props.leaderDetails[0].username}</p>
+            <h3>Members:</h3>
+            {teamMemberBlocks}
+            <Buttons onClick={() => {props.handleClickTeamDetail()}}>Close</Buttons>
           </CenteredFriendDetails>
         </FriendContents>
       </CenteredModal>

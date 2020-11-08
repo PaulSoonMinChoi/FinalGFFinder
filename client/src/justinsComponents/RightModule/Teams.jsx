@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import Team from './Team.jsx';
-import TeamDetailModal from './TeamDetailModal.jsx';
+import TeamDetailModal from './NewTeamDetailModal.jsx';
 
 export default class Teams extends React.Component {
   constructor(props) {
