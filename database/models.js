@@ -81,6 +81,7 @@ const models = {
   getFriendsList: (userId, callback) => {
     const queryString = `select * from friendships inner join users on friendships.friendId = users.ID where friendships.userId = ${userId} order by lastname;`;
     db.query(queryString, (err, results) => {
+      //hi tracy
       if (err) {
         callback(err);
       } else {
