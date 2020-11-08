@@ -15,6 +15,9 @@ export default function Team(props) {
     margin-bottom: 2px;
     font-size: 16px;
     color: #FFF;
+    &:hover {
+      cursor: pointer;
+    }
   `;
 
   const TeamNumber = styled.p`

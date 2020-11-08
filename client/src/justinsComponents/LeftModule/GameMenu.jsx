@@ -61,6 +61,12 @@ export default class GameMenu extends React.Component {
       color: #FFF;
     `;
 
+    const StyledGameCategory = styled.h3`
+      &:hover {
+        cursor: pointer;
+      }
+    `;
+
     //conditional render modal
     const modalShow = this.state.modalShow;
     let modal;
@@ -76,16 +82,16 @@ export default class GameMenu extends React.Component {
         Game Categories
         </GameMenuHeader>
         <GameCategoryListContainer>
-          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >Action</h3>
-          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >Adventure</h3>
-          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >Shooter</h3>
-          <h3 onClick={(e) => { this.handleClickGamesModal(e) }} >MMORPG</h3>
-          <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >RPG</h3>
-          <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Strategy</h3>
-          <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Puzzle</h3>
-          <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Sports</h3>
-          <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Racing</h3>
-          <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Fighting</h3>
+          <StyledGameCategory onClick={(e) => { this.handleClickGamesModal(e) }} >Action</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => { this.handleClickGamesModal(e) }} >Adventure</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => { this.handleClickGamesModal(e) }} >Shooter</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => { this.handleClickGamesModal(e) }} >MMORPG</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >RPG</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >Strategy</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >Puzzle</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >Sports</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >Racing</StyledGameCategory>
+          <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >Fighting</StyledGameCategory>
           {modal}
         </GameCategoryListContainer>
       </div>
