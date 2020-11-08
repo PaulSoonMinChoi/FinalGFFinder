@@ -71,7 +71,7 @@ export default class GameMenu extends React.Component {
     const modalShow = this.state.modalShow;
     let modal;
     if (modalShow) {
-      modal = <GamesModal show={this.state.modalShow} type={this.state.type} handleClickGamesModal={this.handleClickGamesModal}/>
+      modal = <GamesModal show={this.state.modalShow} type={this.state.type} handleClickGamesModal={this.handleClickGamesModal} handleGameSelect={this.props.handleGameSelect}/>
     } else {
       modal = null
     }

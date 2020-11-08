@@ -12,7 +12,7 @@ const MainContainer = styled.div`
   display: flex;
 `;
 
-const CenterModule = ({ currentUser }) => {
+const CenterModule = ({ currentUser, passedDownGame }) => {
 
   const [users, setUsers] = useState([]);
   const [currentGame, setcurrentGame] = useState('');
