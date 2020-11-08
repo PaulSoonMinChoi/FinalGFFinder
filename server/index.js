@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const router = require('./router.js');
+const morgan = require('morgan');
 const cors = require('cors');
 const db = require('../database/index.js');
 const model = require('../database/models.js');
@@ -9,6 +10,7 @@ const model = require('../database/models.js');
 const app = express();
 const PORT = 3000;
 app.use(cors());
+app.use(morgan('dev'));
 
 app.use('/',express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.json());
@@ -32,6 +34,26 @@ app.get('/games', (req, res) => {
       res.status(400).send(err);
     } else {
       res.status(200).json(results);
+    }
+  })
+})
+
+app.post('/invites', (req, res) => {
+  db.query(`INSERT INTO invites (senderId, recipientId) VALUES ('${req.body.senderId}', '${req.body.recipientId}');`, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).json('SUCCESSFUL POST TO INVITES');
+    }
+  })
+})
+
+app.post('/addfriends', (req, res) => {
+  db.query(`INSERT INTO addfriends (senderId, recipientId) VALUES ('${req.body.senderId}', '${req.body.recipientId}');`, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).json('SUCCESSFUL POST TO ADDFRIENDS');
     }
   })
 })
