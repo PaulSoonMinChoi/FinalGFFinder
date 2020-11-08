@@ -21,6 +21,10 @@ const CenterModule = ({ currentUser, passedDownGame }) => {
     getUsers();
   }, []);
 
+  useEffect(() => {
+    setcurrentGame(passedDownGame);
+  }, [passedDownGame]);
+
   const getUsers = () => {
     return fetch('/users')
       .then((response) => response.json())
