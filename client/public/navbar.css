@@ -553,12 +553,7 @@ input[type="text4" i] {
   width: 50%;
   height: 520px;
   margin-right: 2%;
-  margin-left: 1%;
-  overflow-y: auto;
-}
-
-.appFriendsandTeams::-webkit-scrollbar {
-  display:none;
+  margin-left: 2%;
 }
 
 .GameMenu {
