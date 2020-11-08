@@ -94,7 +94,7 @@ export default function GamesModal(props) {
           <h1>GAME TYPE: {props.type}</h1>
           <CenteredGamesList>
             <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
-            <GamesList type={props.type} handleClickGamesModal={props.handleClickGamesModal} />
+            <GamesList type={props.type} handleClickGamesModal={props.handleClickGamesModal} handleGameSelect={props.handleGameSelect}/>
             <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
           </CenteredGamesList>
         </GamesListContents>

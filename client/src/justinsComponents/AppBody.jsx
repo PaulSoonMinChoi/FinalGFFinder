@@ -9,7 +9,15 @@ export default class AppBody extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      gameName: '',
     };
+    this.handleGameSelect = this.handleGameSelect.bind(this);
+  }
+
+  handleGameSelect(gameName){
+    this.setState({
+      gameName: gameName
+    })
   }
 
   render () {
@@ -17,8 +25,8 @@ export default class AppBody extends React.Component {
 
     return (
       <div className="appcenter">
-        <GameMenu />
-        <CenterModule currentUser={this.props.currentUser}/>
+        <GameMenu handleGameSelect={this.handleGameSelect}/>
+        <CenterModule currentUser={this.props.currentUser} passedDownGame={this.state.gameName}/>
         <FriendsAndTeams currentUser={this.props.currentUser}/>
       </div>
     )
