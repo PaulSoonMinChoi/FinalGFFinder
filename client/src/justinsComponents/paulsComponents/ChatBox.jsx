@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import faker from 'faker';
 
 //width: 280px;
 const ChatBoxContainer = styled.div`
@@ -114,7 +115,7 @@ const SearchBarInput = styled.input`
   }
 `;
 
-const ChatBox = ({ currentGame }) => {
+const ChatBox = ({ currentGame, users }) => {
 
   const RoomName = () => {
     if (currentGame === '') {
@@ -133,54 +134,101 @@ const ChatBox = ({ currentGame }) => {
       return (
         <ChatsContainer>
           <ChatList>
-            <ChatEntry>
-            <PlayerName>Paul Choi:</PlayerName>
-            <span>Yo whats up guys anyone want to play?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Tracy Tea:</PlayerName>
-            <span>Does anyone have one more mid laner???</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Justin Murakami:</PlayerName>
-            <span>I am a mid laner @Tracy Tea! Wanna add me?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Paul Choi:</PlayerName>
-            <span>Yo whats up guys anyone want to play?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Tracy Tea:</PlayerName>
-            <span>Does anyone have one more mid laner???</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Justin Murakami:</PlayerName>
-            <span>I am a mid laner @Tracy Tea! Wanna add me?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Paul Choi:</PlayerName>
-            <span>Yo whats up guys anyone want to play?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Tracy Tea:</PlayerName>
-            <span>Does anyone have one more mid laner???</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Justin Murakami:</PlayerName>
-            <span>I am a mid laner @Tracy Tea! Wanna add me?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Paul Choi:</PlayerName>
-            <span>Yo whats up guys anyone want to play?</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Tracy Tea:</PlayerName>
-            <span>Does anyone have one more mid laner???</span>
-            </ChatEntry>
-            <ChatEntry>
-            <PlayerName>Justin Murakami:</PlayerName>
-            <span>I am a mid laner @Tracy Tea! Wanna add me?</span>
-            </ChatEntry>
+          {users.map((user, index) => {
+            if (user.currentGame === currentGame) {
+              return (
+                <ChatEntry>
+                  <PlayerName>{user.username}:</PlayerName>
+                  <span>{faker.lorem.sentence()}</span>
+                </ChatEntry>
+              )
+            }
+          })}
+          </ChatList>
+        </ChatsContainer>
+      )
+    } else if (currentGame === 'BattleField') {
+      return (
+        <ChatsContainer>
+          <ChatList>
+          {users.map((user, index) => {
+            if (user.currentGame === currentGame) {
+              return (
+                <ChatEntry>
+                  <PlayerName>{user.username}:</PlayerName>
+                  <span>{faker.lorem.sentence()}</span>
+                </ChatEntry>
+              )
+            }
+          })}
+          </ChatList>
+        </ChatsContainer>
+      )
+    } else if (currentGame === 'Among Us') {
+      return (
+        <ChatsContainer>
+          <ChatList>
+          {users.map((user, index) => {
+            if (user.currentGame === currentGame) {
+              return (
+                <ChatEntry>
+                  <PlayerName>{user.username}:</PlayerName>
+                  <span>{faker.lorem.sentence()}</span>
+                </ChatEntry>
+              )
+            }
+          })}
+          </ChatList>
+        </ChatsContainer>
+      )
+    } else if (currentGame === 'Fortnite') {
+      return (
+        <ChatsContainer>
+          <ChatList>
+          {users.map((user, index) => {
+            if (user.currentGame === currentGame) {
+              return (
+                <ChatEntry>
+                  <PlayerName>{user.username}:</PlayerName>
+                  <span>{faker.lorem.sentence()}</span>
+                </ChatEntry>
+              )
+            }
+          })}
+          </ChatList>
+        </ChatsContainer>
+      )
+    } else if (currentGame === 'Escape From Tarkov') {
+      return (
+        <ChatsContainer>
+          <ChatList>
+          {users.map((user, index) => {
+            if (user.currentGame === currentGame) {
+              return (
+                <ChatEntry>
+                  <PlayerName>{user.username}:</PlayerName>
+                  <span>{faker.lorem.sentence()}</span>
+                </ChatEntry>
+              )
+            }
+          })}
+          </ChatList>
+        </ChatsContainer>
+      )
+    } else if (currentGame === 'Valorant') {
+      return (
+        <ChatsContainer>
+          <ChatList>
+          {users.map((user, index) => {
+            if (user.currentGame === currentGame) {
+              return (
+                <ChatEntry>
+                  <PlayerName>{user.username}:</PlayerName>
+                  <span>{faker.lorem.sentence()}</span>
+                </ChatEntry>
+              )
+            }
+          })}
           </ChatList>
         </ChatsContainer>
       )
@@ -197,3 +245,16 @@ const ChatBox = ({ currentGame }) => {
 }
 
 export default ChatBox;
+
+            // <ChatEntry>
+            // <PlayerName>Paul Choi:</PlayerName>
+            // <span>Yo whats up guys anyone want to play?</span>
+            // </ChatEntry>
+            // <ChatEntry>
+            // <PlayerName>Tracy Tea:</PlayerName>
+            // <span>Does anyone have one more mid laner???</span>
+            // </ChatEntry>
+            // <ChatEntry>
+            // <PlayerName>Justin Murakami:</PlayerName>
+            // <span>I am a mid laner @Tracy Tea! Wanna add me?</span>
+            // </ChatEntry>
