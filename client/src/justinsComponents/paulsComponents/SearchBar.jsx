@@ -90,7 +90,7 @@ const SearchDropDown = styled.div`
   position: absolute;
   width: auto;
   max-height: auto;
-  min-width: 565px;
+  min-width: 412px;
   background-color: #80A3EA;
   border: 1px solid black;
   border-radius: 20px;
@@ -331,11 +331,11 @@ const Buttons = styled.button`
   }
 `;
 
-const SearchBar = ({ users }) => {
+const SearchBar = ({ users, currentGame, setcurrentGame, currentUser }) => {
   const [searching, setSearching] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [games, setGames] = useState([{ gameName: 'League of Legends' }, { gameName:'BattleField' } , { gameName: 'Among Us' }, { gameName: 'Fortnite' } , { gameName: 'Escape From Tarkov' }, { gameName: 'Valorant' }]);
-  const [currentGame, setcurrentGame] = useState('');
+  // const [currentGame, setcurrentGame] = useState('');
 
   useEffect(() => {
 
@@ -352,6 +352,32 @@ const SearchBar = ({ users }) => {
         console.error(error);
       });
   };
+
+  const postInvite = (senderId, recipientId) => {
+    axios.post('/invites', {
+      senderId: senderId,
+      recipientId: recipientId
+    })
+    .then(() => {
+      console.log('SUCCESSFUL POST FROM CLIENT')
+    })
+    .catch(err => {
+      console.error(err);
+    })
+  }
+
+  const postAdd = (senderId, recipientId) => {
+    axios.post('/addfriends', {
+      senderId: senderId,
+      recipientId: recipientId
+    })
+    .then(() => {
+      console.log('SUCCESSFUL POST FROM CLIENT')
+    })
+    .catch(err => {
+      console.error(err);
+    })
+  }
 
   const handleSearch = (e) => {
     setSearching(e.target.value);
@@ -370,9 +396,9 @@ const SearchBar = ({ users }) => {
             Popular Games
           </SearchDropDownHeader>
           <SearchList>
-            {games.map(game => {
+            {games.map((game, index) => {
               return (
-              <ListEntries onClick={() => {setcurrentGame(game.gameName); handleSearchBarClick(false);}}>{game.gameName}</ListEntries>
+              <ListEntries key={index} onClick={() => {setcurrentGame(game.gameName); handleSearchBarClick(false);}}>{game.gameName}</ListEntries>
               )
             })}
           </SearchList>
@@ -386,16 +412,16 @@ const SearchBar = ({ users }) => {
       return (
         <GamePlayersContainer>
           <PlayerList>
-          {users.map(user => {
+          {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
-                <PlayerEntry>
+                <PlayerEntry key={index}>
                   <PlayerEntryTitle>UserName:</PlayerEntryTitle>
                   <PlayerEntryText>{user.username}</PlayerEntryText>
                   <PlayerEntryTitle>Region:</PlayerEntryTitle>
                   <PlayerEntryText>{user.region}</PlayerEntryText>
-                  <Buttons>Invite</Buttons>
-                  <Buttons>Add</Buttons>
+                  <Buttons onClick={() => postInvite(currentUser.id, user.ID)}>Invite</Buttons>
+                  <Buttons onClick={() => postAdd(currentUser.id, user.ID)}>Add</Buttons>
                 </PlayerEntry>
               )
             }
