@@ -62,50 +62,50 @@ export default class FriendsList extends React.Component {
   render() {
     //styled components
     const Buttons = styled.button`
-    background: linear-gradient(180deg, #B747FC 46.21%, rgba(255, 255, 255, 0) 146.21%), #1C2331;
-    border-radius: 65px;
-    height: 32px;
-    width: 68px;
-    border: none;
-    outline: none;
-    margin-left: 10px;
-    margin-top: 10px;
-    display: inline-block;
-    vertical-align: middle;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    transition-duration: 0.3s;
-    transition-property: transform;
-    &:before {
-      pointer-events: none;
-      position: absolute;
-      z-index: -1;
-      content: '';
-      top: 100%;
-      left: 5%;
-      height: 10px;
-      width: 90%;
-      opacity: 0;
-      background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-      /* W3C */
-      -webkit-transition-duration: 0.3s;
+      background: linear-gradient(180deg, #B747FC 46.21%, rgba(255, 255, 255, 0) 146.21%), #1C2331;
+      border-radius: 65px;
+      height: 32px;
+      width: 68px;
+      border: none;
+      outline: none;
+      margin-left: 10px;
+      margin-top: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      position: relative;
       transition-duration: 0.3s;
-      -webkit-transition-property: transform, opacity;
-      transition-property: transform, opacity;
-    }
-    &:hover {
-      -webkit-transform: translateY(-5px);
-      transform: translateY(-5px);
-      cursor: pointer;
-      background-color: #DFB4F9;
-    }
-    &:hover:before {
-      opacity: 1;
-      -webkit-transform: translateY(5px);
-      transform: translateY(5px);
-    }
+      transition-property: transform;
+      &:before {
+        pointer-events: none;
+        position: absolute;
+        z-index: -1;
+        content: '';
+        top: 100%;
+        left: 5%;
+        height: 10px;
+        width: 90%;
+        opacity: 0;
+        background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+        /* W3C */
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform, opacity;
+        transition-property: transform, opacity;
+      }
+      &:hover {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        cursor: pointer;
+        background-color: #DFB4F9;
+      }
+      &:hover:before {
+        opacity: 1;
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+      }
     `;
 
     const FriendOrTeamHeader = styled.h2`
@@ -146,9 +146,9 @@ export default class FriendsList extends React.Component {
 
     let friendsOrTeamButton;
     if (teamShow) {
-      friendsOrTeamButton = 'Show My Friends'
+      friendsOrTeamButton = 'Show Friends'
     } else {
-      friendsOrTeamButton = 'Show My Teams'
+      friendsOrTeamButton = 'Show Teams'
     };
 
     return (

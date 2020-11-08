@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import GamesList from './GamesList.jsx';
 
 
 const CenteredModal = styled.div`
   position: fixed;
-  width: 90%;
+  width: 25%;
   height: 60%;
   top: 150px;
   left: 50%;
@@ -17,14 +16,28 @@ const CenteredModal = styled.div`
   z-index: 120;
   ::-webkit-scrollbar {display:none;}
   text-align: center;
+  color: #FFF;
 `;
 
-const GamesListContents = styled.div`
+const FriendContents = styled.div`
   margin: 5px;
 `;
 
-const CenteredGamesList = styled.div`
+const FriendUserName = styled.h2`
+  color: #E3A1FA;
+`;
+
+const CenteredFriendDetails = styled.div`
   position: fixed;
+`;
+
+const FlexBoxedDetails = styled.div`
+  display: flex;
+`;
+
+const BlockedDetails = styled.div`
+  width: 33%;
+  display: block;
 `;
 
 const Buttons = styled.button`
@@ -75,18 +88,40 @@ const Buttons = styled.button`
   }
 `;
 
-export default function GamesModal(props) {
+export default function FriendDetailModal(props) {
+
+  let status;
+  if (props.friendDetails[0].onlineStatus === 'online') {
+    status = <p>Online!</p>
+  } else {
+    status = <p>Offline.</p>
+  }
 
   return (
     <CenteredModal>
-      <GamesListContents>
-        <h1>GAME TYPE: {props.type}</h1>
-        <CenteredGamesList>
-          <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
-          <GamesList type={props.type} handleClickGamesModal={props.handleClickGamesModal} />
-          <Buttons onClick={(e) => {props.handleClickGamesModal(e)}}>Close</Buttons>
-        </CenteredGamesList>
-      </GamesListContents>
+      <FriendContents>
+        <FriendUserName>{props.friendDetails[0].username}'s Profile</FriendUserName>
+        <CenteredFriendDetails>
+          <img src={props.friendDetails[0].profilePicture}/>
+          <FlexBoxedDetails>
+            <BlockedDetails>
+              <h3>Status:</h3>
+              {status}
+            </BlockedDetails>
+            <BlockedDetails>
+              <h3>Level:</h3>
+              <p>{props.friendDetails[0].playertype}</p>
+            </BlockedDetails>
+            <BlockedDetails>
+              <h3>Region:</h3>
+              <p>{props.friendDetails[0].region}</p>
+            </BlockedDetails>
+          </FlexBoxedDetails>
+          <h3>About {props.friendDetails[0].userName}:</h3>
+          <p>{props.friendDetails[0].aboutMe}</p>
+          <Buttons onClick={(e) => {props.handleClickFriendDetail(e)}}>Close</Buttons>
+        </CenteredFriendDetails>
+      </FriendContents>
     </CenteredModal>
   );
 }
