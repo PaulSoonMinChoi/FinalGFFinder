@@ -36,6 +36,8 @@ const TeamContents = styled.div`
 
 const TeamName = styled.h2`
   color: #E3A1FA;
+  margin-block-start: 0.4em;
+  margin-block-end: 0.83em;
 `;
 
 const CenteredTeamDetails = styled.div`
@@ -106,6 +108,7 @@ export default function TeamDetailModal (props) {
     <BlockingDiv>
       <CenteredModal>
         <TeamContents>
+        <Buttons onClick={() => {props.handleClickTeamDetail()}}>Close</Buttons>
           <TeamName>Team Information For {props.teamDetails[0].teamName}:</TeamName>
           <CenteredTeamDetails>
             <TeamDetailHeadings>Team Leader:</TeamDetailHeadings>

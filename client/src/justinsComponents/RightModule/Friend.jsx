@@ -15,6 +15,9 @@ import styled from 'styled-components';
     border-radius: 50%;
     overflow: hidden;
     border: 1px solid rgba(34, 34, 34, 0.15);
+    &:hover {
+      cursor: pointer;
+    }
   `;
 
   const FriendUserName = styled.h3`
