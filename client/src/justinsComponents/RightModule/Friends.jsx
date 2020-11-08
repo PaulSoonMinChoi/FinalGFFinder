@@ -43,6 +43,7 @@ export default class Friends extends React.Component {
     const StyledFriends = styled.div`
       display: flex;
       flex-wrap: wrap;
+      margin-top: 20px;
     `;
 
     //conditional rendering

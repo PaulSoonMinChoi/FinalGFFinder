@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import styled from 'styled-components';
-import GamesModal from './GamesModal.jsx';
+import GamesModal from './NewGamesModal.jsx';
 
 export default class GameMenu extends React.Component {
   constructor(props) {
@@ -54,12 +54,13 @@ export default class GameMenu extends React.Component {
     `;
 
     const GameCategoryListContainer = styled.div`
-      display: block;
+      position: relative;
       margin-top: 50px;
       margin-left: 20px;
       font-size: 14px;
       color: #FFF;
-  `;
+    `;
+
     //conditional render modal
     const modalShow = this.state.modalShow;
     let modal;
@@ -71,7 +72,6 @@ export default class GameMenu extends React.Component {
 
     return (
       <div className="GameMenu">
-
         <GameMenuHeader>
         Game Categories
         </GameMenuHeader>
@@ -86,9 +86,8 @@ export default class GameMenu extends React.Component {
           <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Sports</h3>
           <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Racing</h3>
           <h3 onClick={(e) => {this.handleClickGamesModal(e)}} >Fighting</h3>
-          </GameCategoryListContainer>
           {modal}
-
+        </GameCategoryListContainer>
       </div>
     )
   }

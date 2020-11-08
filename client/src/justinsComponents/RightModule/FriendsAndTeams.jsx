@@ -19,7 +19,6 @@ export default class FriendsList extends React.Component {
 
   //component did mount with get request for friends
   componentDidMount() {
-    console.log(this.props.currentUser)
     this.getFriends(this.props.currentUser.id)
   }
 
@@ -62,30 +61,7 @@ export default class FriendsList extends React.Component {
 
   render() {
     //styled components
-    const FriendOrTeamHeader = styled.h2`
-    position: relative;
-    height: 25px;
-    width: 100%;
-    margin: auto;
-    vertical-align: middle;
-    top: 30px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 25px;
-    /* identical to box height */
-
-    display: block;
-    align-items: center;
-    text-align: center;
-    letter-spacing: -0.015em;
-
-    color: #E3A1FA;
-  `;
-
-  const Buttons = styled.button`
+    const Buttons = styled.button`
     background: linear-gradient(180deg, #B747FC 46.21%, rgba(255, 255, 255, 0) 146.21%), #1C2331;
     border-radius: 65px;
     height: 32px;
@@ -130,7 +106,30 @@ export default class FriendsList extends React.Component {
       -webkit-transform: translateY(5px);
       transform: translateY(5px);
     }
-  `;
+    `;
+
+    const FriendOrTeamHeader = styled.h2`
+      position: relative;
+      height: 25px;
+      width: 100%;
+      margin: auto;
+      vertical-align: middle;
+      top: 5px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 25px;
+      /* identical to box height */
+
+      display: block;
+      align-items: center;
+      text-align: center;
+      letter-spacing: -0.015em;
+
+      color: #E3A1FA;
+    `;
 
     //conditionally render either teams or friends
     const { teamShow } = this.state;

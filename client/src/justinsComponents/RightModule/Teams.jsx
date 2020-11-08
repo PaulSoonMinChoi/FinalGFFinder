@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import Team from './Team.jsx';
 import TeamDetailModal from './TeamDetailModal.jsx';
 
@@ -44,6 +45,13 @@ export default class Teams extends React.Component {
 
 
   render() {
+    //styled components
+    const StyledTeams = styled.div`
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    `;
+
     //conditional rendering of team detail modal
     const { teamDetails, leaderDetails, teamDetailsShow } = this.state;
     let teamDetailModal;
@@ -60,10 +68,10 @@ export default class Teams extends React.Component {
     })
 
     return(
-      <div>
+      <StyledTeams>
         {teamBlocks}
         {teamDetailModal}
-      </div>
+      </StyledTeams>
     )
   }
 }
