@@ -30,6 +30,18 @@ export default class GameMenu extends React.Component {
 
   render() {
     //styled components
+    const StyledGameMenuDiv = styled.div`
+      padding-left: 1%;
+      color: white;
+      width: 40%;
+      height: 520px;
+      margin-left: 2%;
+      margin-right: 1%;
+      background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
+      box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
+      border-radius: 10px;
+    `;
+
     const GameMenuHeader = styled.h2`
       position: relative;
       height: 25px;
@@ -77,7 +89,7 @@ export default class GameMenu extends React.Component {
     }
 
     return (
-      <div className="GameMenu">
+      <StyledGameMenuDiv>
         <GameMenuHeader>
         Game Categories
         </GameMenuHeader>
@@ -94,7 +106,7 @@ export default class GameMenu extends React.Component {
           <StyledGameCategory onClick={(e) => {this.handleClickGamesModal(e)}} >Fighting</StyledGameCategory>
           {modal}
         </GameCategoryListContainer>
-      </div>
+      </StyledGameMenuDiv>
     )
   }
 }
