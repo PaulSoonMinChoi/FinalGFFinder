@@ -36,6 +36,26 @@ app.get('/games', (req, res) => {
   })
 })
 
+app.post('/invites', (req, res) => {
+  db.query(`INSERT INTO invites (senderId, recipientId) VALUES ('${req.body.senderId}', '${req.body.recipientId}');`, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).json('SUCCESSFUL POST TO INVITES');
+    }
+  })
+})
+
+app.post('/addfriends', (req, res) => {
+  db.query(`INSERT INTO addfriends (senderId, recipientId) VALUES ('${req.body.senderId}', '${req.body.recipientId}');`, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).json('SUCCESSFUL POST TO ADDFRIENDS');
+    }
+  })
+})
+
 //<-----JUSTINS ROUTES ----->
 app.get('/gamesList/:type', (req, res) => {
   model.getGamesList(req.params.type, (err, results) => {
