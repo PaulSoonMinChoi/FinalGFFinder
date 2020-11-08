@@ -21,7 +21,7 @@
   background-image: url('https://i.ibb.co/s9YtFpZ/GF-Finder-Logo-4.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 358px 99px;
+  background-size: 100%;
   box-shadow: inset 0px 4px 4px rgba(203, 152, 221, 0.49);
   border-radius: 62px;
 }
@@ -55,7 +55,7 @@
 
 .ttSignUp {
 position: absolute;
-width: 6%;
+width: auto;
 height: 42px;
 left: 82%;
 top: 34%;
@@ -99,11 +99,12 @@ height: 10%;
 left: 86%;
 top: 75%;
 margin-top: 4px;
+width: auto;
+font-size: inherit;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 18px;
 line-height: 21px;
 display: flex;
 align-items: center;
@@ -148,9 +149,9 @@ color: #FFFFFF;
 
 .mail-modal-main {
   position:fixed;
-  background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%);
-  width: 600px;
-  height: 350px;
+  background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
+  width: 35%;
+  height: 477px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -524,11 +525,71 @@ input[type="text4" i] {
 
 
 .ttGameInvites {
-
+  color: white;
+  text-align-last: center;
+  font-size: x-large;
+  margin-top: 4%;
 }
 
 .ttFriendInvites {
+  color: white;
+  text-align-last: center;
+  font-size: x-large;
+  margin-top: 4%;
+  position: relative;
+  top: auto;
+  margin-bottom: 1%;
+}
 
+.invlist{
+  color: white;
+  list-style: none;
+  margin-left: 6%;
+  overflow: scroll;
+  height: 35%;
+  margin-bottom: 3%;
+}
+
+.friendlist{
+  color: white;
+  list-style: none;
+  margin-left: 6%;
+  overflow: scroll;
+  height: 33%;
+  margin-bottom: 3%;
+  position: relative;
+  top: auto;
+}
+
+li.licss {
+  margin-bottom: 3%;
+}
+
+li.licss:hover {
+  opacity: 0.7;
+}
+
+button.acceptInv:hover, button.acceptFriend:hover, button.declineInv:hover, button.declineFriend:hover {
+  background-color: rgb(165 40 57);
+}
+
+button.acceptInv, button.acceptFriend {
+  position: fixed;
+  left: 60%;
+  background-color: #e3a1fa;
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button.declineInv, button.declineFriend {
+  background-color: rgba(40,83,165,0.86);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  position: fixed;
+  left: 78%;
 }
 
 .kbPnPt {

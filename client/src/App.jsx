@@ -20,6 +20,10 @@ class App extends React.Component {
       isLoggedIn: false,
       showUsername: false,
       showMail: false,
+      // mail: [],
+      // friendMail: [],
+      // mailSenders: [],
+      // friendSenders: [],
       currentUser: {
         id: '',
         firstname: '',
@@ -186,6 +190,7 @@ class App extends React.Component {
      });
   }
 
+
   changePicture(pic) {
     this.setState({
       currentUser:{
@@ -265,7 +270,7 @@ class App extends React.Component {
 
               <Username className="modal" show={this.state.showUsername} handleClose={this.hideUsernameModal} onClick={this.showUsernameModal} username={this.changeUsername}/>
 
-              <Mail className="modal" show={this.state.showMail} handleClose={this.hideMailModal} onClick={this.showMailModal} id={this.state.currentUser.id}/>
+              <Mail className="modal" show={this.state.showMail} handleClose={this.hideMailModal} onClick={this.showMailModal} id={this.state.currentUser.id} mail={this.state.mail} friendmail={this.state.friendMail} />
 
               <div className="backdropapp">
 
@@ -278,7 +283,7 @@ class App extends React.Component {
                 <a className="minecraft" href="https://www.minecraft.net/en-us">here</a>
                 <a className="overwatch" href="https://playoverwatch.com/en-us/">here</a>
                 <a className="apex" href="https://www.ea.com/games/apex-legends">here</a>
-                <div className="ttmail" onClick={this.showMailModal}></div>
+                <div className="ttmail" onClick={this.showMailModal} ></div>
                 <div className="ttAboutUs">
                   <a className="ttabout" onClick={this.showAboutModal}>About Us</a>
                 </div>
@@ -328,7 +333,7 @@ class App extends React.Component {
                   <a className="ttSign" onClick={this.showSignUpModal}>Sign Up</a>
                 </div>
                 <div className="ttlogin">
-                  <a className="ttloginhere" onClick={this.showLogInModal}>Have an accout? Log in!</a>
+                  <a className="ttloginhere" onClick={this.showLogInModal}>Have an account? Log in!</a>
                 </div>
               </div>
 
