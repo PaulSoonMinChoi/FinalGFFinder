@@ -17,11 +17,11 @@ class App extends React.Component {
       showSignUp: false,
       showLogIn: false,
       showPicture: false,
-      isLoggedIn: true,
+      isLoggedIn: false,
       showUsername: false,
       showMail: false,
       currentUser: {
-        id: 1,
+        id: '',
         firstname: '',
         lastname: '',
         username: '',

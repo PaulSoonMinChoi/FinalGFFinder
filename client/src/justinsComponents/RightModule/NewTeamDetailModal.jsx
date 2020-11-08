@@ -29,29 +29,21 @@ const CenteredModal = styled.div`
   color: #FFF;
 `;
 
-const FriendContents = styled.div`
+const TeamContents = styled.div`
   margin: 5px;
+  text-align: center;
 `;
 
-const FriendUserName = styled.h2`
+const TeamName = styled.h2`
   color: #E3A1FA;
 `;
 
-const CenteredFriendDetails = styled.div`
-position: fixed;
+const CenteredTeamDetails = styled.div`
+  position: relative;
 `;
 
-const StyledImage = styled.img`
-  border-radius: 4px;
-`;
-
-const FlexBoxedDetails = styled.div`
-  display: flex;
-`;
-
-const BlockedDetails = styled.div`
-  width: 33%;
-  display: block;
+const TeamDetailHeadings = styled.h3`
+  color: #E3A1FA;
 `;
 
 const Buttons = styled.button`
@@ -113,16 +105,16 @@ export default function TeamDetailModal (props) {
   return (
     <BlockingDiv>
       <CenteredModal>
-        <FriendContents>
-          <FriendUserName>Team Information For {props.teamDetails[0].teamName}:</FriendUserName>
-          <CenteredFriendDetails>
-            <h3>Team Leader:</h3>
+        <TeamContents>
+          <TeamName>Team Information For {props.teamDetails[0].teamName}:</TeamName>
+          <CenteredTeamDetails>
+            <TeamDetailHeadings>Team Leader:</TeamDetailHeadings>
             <p>{props.leaderDetails[0].username}</p>
-            <h3>Members:</h3>
+            <TeamDetailHeadings>Members:</TeamDetailHeadings>
             {teamMemberBlocks}
             <Buttons onClick={() => {props.handleClickTeamDetail()}}>Close</Buttons>
-          </CenteredFriendDetails>
-        </FriendContents>
+          </CenteredTeamDetails>
+        </TeamContents>
       </CenteredModal>
     </BlockingDiv>
   );
