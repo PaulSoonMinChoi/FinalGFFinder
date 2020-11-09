@@ -559,6 +559,7 @@ input[type="text4" i] {
   position: relative;
   top: auto;
 }
+<<<<<<< HEAD
 
 li.licss {
   margin-bottom: 3%;
@@ -569,6 +570,18 @@ li.licss:hover {
 }
 
 
+=======
+
+li.licss {
+  margin-bottom: 3%;
+}
+
+li.licss:hover {
+  opacity: 0.7;
+}
+
+
+>>>>>>> master
 button.acceptInv:hover, button.acceptFriend:hover, button.declineInv:hover, button.declineFriend:hover {
   background-color: rgb(165 40 57);
 }
@@ -599,7 +612,6 @@ button.declineInv, button.declineFriend {
 
 .appcenter {
   width: auto;
-  min-width: 1200px;
   display: flex;
   position: relative;
   margin-top: 10%;
@@ -611,8 +623,12 @@ button.declineInv, button.declineFriend {
   background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
   border-radius: 10px;
+<<<<<<< HEAD
+  width: 40%;
+=======
   width: 50%;
   height: 520px;
+>>>>>>> master
   margin-right: 2%;
   margin-left: 1%;
 }
@@ -620,10 +636,13 @@ button.declineInv, button.declineFriend {
 .GameMenu {
   padding-left: 1%;
   color: white;
+<<<<<<< HEAD
+  width: 50%;
+=======
   width: 40%;
   height: 520px;
+>>>>>>> master
   margin-left: 2%;
-  margin-right: 1%;
   background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
   border-radius: 10px;

@@ -338,7 +338,6 @@ class App extends React.Component {
               </div>
 
               <AppBody currentUser={this.state.currentUser}/>
-
                <div className="appfooter">
                 </div>
             </div>
