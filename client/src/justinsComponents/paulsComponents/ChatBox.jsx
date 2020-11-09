@@ -214,6 +214,14 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       return (
         <ChatsContainer>
           <ChatList>
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
@@ -223,14 +231,6 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
                 </ChatEntry>
               )
             }
-          })}
-          {usersChats.map((chatUser, index) => {
-            return (
-              <ChatEntry>
-                <PlayerName>{chatUser.username}:</PlayerName>
-                <span>{chatUser.chat}</span>
-              </ChatEntry>
-            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -239,6 +239,14 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       return (
         <ChatsContainer>
           <ChatList>
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
@@ -248,14 +256,6 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
                 </ChatEntry>
               )
             }
-          })}
-          {usersChats.map((chatUser, index) => {
-            return (
-              <ChatEntry>
-                <PlayerName>{chatUser.username}:</PlayerName>
-                <span>{chatUser.chat}</span>
-              </ChatEntry>
-            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -264,6 +264,14 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       return (
         <ChatsContainer>
           <ChatList>
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
@@ -273,14 +281,6 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
                 </ChatEntry>
               )
             }
-          })}
-          {usersChats.map((chatUser, index) => {
-            return (
-              <ChatEntry>
-                <PlayerName>{chatUser.username}:</PlayerName>
-                <span>{chatUser.chat}</span>
-              </ChatEntry>
-            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -289,6 +289,14 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       return (
         <ChatsContainer>
           <ChatList>
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
@@ -298,14 +306,6 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
                 </ChatEntry>
               )
             }
-          })}
-          {usersChats.map((chatUser, index) => {
-            return (
-              <ChatEntry>
-                <PlayerName>{chatUser.username}:</PlayerName>
-                <span>{chatUser.chat}</span>
-              </ChatEntry>
-            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -314,6 +314,14 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       return (
         <ChatsContainer>
           <ChatList>
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
@@ -323,14 +331,6 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
                 </ChatEntry>
               )
             }
-          })}
-          {usersChats.map((chatUser, index) => {
-            return (
-              <ChatEntry>
-                <PlayerName>{chatUser.username}:</PlayerName>
-                <span>{chatUser.chat}</span>
-              </ChatEntry>
-            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -339,6 +339,14 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       return (
         <ChatsContainer>
           <ChatList>
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
+          })}
           {users.map((user, index) => {
             if (user.currentGame === currentGame) {
               return (
@@ -348,14 +356,6 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
                 </ChatEntry>
               )
             }
-          })}
-          {usersChats.map((chatUser, index) => {
-            return (
-              <ChatEntry>
-                <PlayerName>{chatUser.username}:</PlayerName>
-                <span>{chatUser.chat}</span>
-              </ChatEntry>
-            )
           })}
           </ChatList>
         </ChatsContainer>

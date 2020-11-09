@@ -42,6 +42,7 @@ position: fixed;
 
 const StyledImage = styled.img`
   border-radius: 4px;
+  height: 250px;
 `;
 
 const FlexBoxedDetails = styled.div`
@@ -101,6 +102,11 @@ const Buttons = styled.button`
   }
 `;
 
+const Details = styled.p`
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+
 export default function FriendDetailModal(props) {
 
   let status;
@@ -132,7 +138,7 @@ export default function FriendDetailModal(props) {
               </BlockedDetails>
             </FlexBoxedDetails>
             <h3>About {props.friendDetails[0].userName}:</h3>
-            <p>{props.friendDetails[0].aboutMe}</p>
+            <Details>{props.friendDetails[0].aboutMe}</Details>
             <Buttons onClick={(e) => {props.handleClickFriendDetail(e)}}>Close</Buttons>
           </CenteredFriendDetails>
         </FriendContents>

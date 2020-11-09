@@ -245,6 +245,8 @@ const insertUserGames = () => {
   });
 };
 
+
+
 insertUsers();
 insertFriendships();
 insertTeams();

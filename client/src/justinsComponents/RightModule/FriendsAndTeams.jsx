@@ -27,7 +27,7 @@ export default class FriendsList extends React.Component {
           this.getFriends(currentUserId)
         }
       },
-      5000
+      60000
     );
   }
 

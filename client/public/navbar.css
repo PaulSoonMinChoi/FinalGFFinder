@@ -41,7 +41,7 @@
 .ttmail {
   position: absolute;
   z-index: 1;
-  left: 96%;
+  left: 1586px;
   top: 11%;
   width: 18px;
   height: 20px;
@@ -141,7 +141,7 @@ color: #FFFFFF;
   /* background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%); */
   width: 600px;
   height: 350px;
-  top: 44%;
+  top: 36%;
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 102;
@@ -195,8 +195,8 @@ color: #FFFFFF;
 
 .sign-up-modal-main {
   position:fixed;
-  width: 26%;
-  height: 68%;
+  width: 370px;
+  height: 54%;
   left: 50%;
   top: 55%;
   display: flex;
@@ -416,9 +416,8 @@ color: #FFFFFF;
 }
 .ttprofilepic {
 position: absolute;
-width: 5%;
 height: 64%;
-left: 92%;
+left: 1538px;
 top: 14%;
 border-radius: 50%;
 background: rgb(253 253 253 / 86%);
@@ -512,8 +511,10 @@ input[type="text4" i] {
 .backdropapp {
   position: absolute;
   width: 100%;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(180deg, #080327 0%, rgba(35, 0, 51, 0.890647) 43.23%, rgba(8, 12, 47, 0.87) 75%, rgba(18, 18, 83, 0.890647) 84.37%);
 }
 
@@ -559,7 +560,6 @@ input[type="text4" i] {
   position: relative;
   top: auto;
 }
-<<<<<<< HEAD
 
 li.licss {
   margin-bottom: 3%;
@@ -570,18 +570,6 @@ li.licss:hover {
 }
 
 
-=======
-
-li.licss {
-  margin-bottom: 3%;
-}
-
-li.licss:hover {
-  opacity: 0.7;
-}
-
-
->>>>>>> master
 button.acceptInv:hover, button.acceptFriend:hover, button.declineInv:hover, button.declineFriend:hover {
   background-color: rgb(165 40 57);
 }
@@ -623,12 +611,8 @@ button.declineInv, button.declineFriend {
   background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
   border-radius: 10px;
-<<<<<<< HEAD
-  width: 40%;
-=======
   width: 50%;
   height: 520px;
->>>>>>> master
   margin-right: 2%;
   margin-left: 1%;
 }
@@ -636,12 +620,8 @@ button.declineInv, button.declineFriend {
 .GameMenu {
   padding-left: 1%;
   color: white;
-<<<<<<< HEAD
-  width: 50%;
-=======
   width: 40%;
   height: 520px;
->>>>>>> master
   margin-left: 2%;
   background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
@@ -742,11 +722,19 @@ button.declineInv, button.declineFriend {
   /* border-radius: 91px; */
 
   width: 100%;
-  height: 100%;
-  z-index: 9000;
+  height: 21%;
+  z-index: 100;
   background: linear-gradient(180deg, rgba(147, 45, 183, 0.81) 0.12%, #080327 0.11%, rgba(180, 92, 249, 0.85) 11.44%, rgba(31, 39, 55, 0.985816) 112%);
   border: 1px solid #000000;
   box-sizing: border-box;
   backdrop-filter: blur(20px);
 }
+
+.signupvid {
+  position: absolute;
+  left: 30%;
+  top: 25%;
+}
+
+
 
