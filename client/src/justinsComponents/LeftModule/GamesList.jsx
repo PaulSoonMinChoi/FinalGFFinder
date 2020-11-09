@@ -34,9 +34,9 @@ export default class GamesList extends React.Component {
 
     //mapped game blocks
     const { games } = this.state;
-    const { handleClick } = this.props;
+    const { handleClickGamesModal, handleGameSelect } = this.props;
     const GameBlocks = games.map((game) => {
-      return <Game key={game.ID} game={game} handleClick={handleClick} />
+      return <Game key={game.ID} game={game} handleClickGamesModal={handleClickGamesModal} handleGameSelect={handleGameSelect} />
     })
 
     return (

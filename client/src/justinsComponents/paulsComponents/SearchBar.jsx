@@ -339,7 +339,6 @@ const SearchBar = ({ users, currentGame, setcurrentGame, currentUser }) => {
   const [searching, setSearching] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [games, setGames] = useState([{ gameName: 'League of Legends' }, { gameName:'BattleField' } , { gameName: 'Among Us' }, { gameName: 'Fortnite' } , { gameName: 'Escape From Tarkov' }, { gameName: 'Valorant' }]);
-  // const [currentGame, setcurrentGame] = useState('');
 
   useEffect(() => {
 

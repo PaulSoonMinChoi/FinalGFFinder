@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const router = require('./router.js');
+const morgan = require('morgan');
 const cors = require('cors');
 const db = require('../database/index.js');
 const model = require('../database/models.js');
@@ -9,6 +10,7 @@ const model = require('../database/models.js');
 const app = express();
 const PORT = 3000;
 app.use(cors());
+app.use(morgan('dev'));
 
 app.use('/',express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.json());
