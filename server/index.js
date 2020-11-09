@@ -125,3 +125,24 @@ app.get('/getTeamLeaderInfo/:id', (req, res) => {
 app.listen(PORT, ()=> {
   console.log(`Listening on http://localhost:${PORT}`);
 })
+
+
+/*
+INSERT INTO invites (senderId, recipientId) VALUES ('1', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('3', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('4', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('5', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('6', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('7', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('8', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('9', '2');
+
+INSERT INTO addfriends (senderId, recipientId) VALUES ('1', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('3', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('4', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('5', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('6', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('7', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('8', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('9', '2');
+*/

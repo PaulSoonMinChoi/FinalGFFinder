@@ -10,7 +10,7 @@ class Mail extends React.Component {
       mail: [],
       mailSenders: [],
       friendSenders: [],
-      show: true
+      show: true,
     }
   };
 
@@ -36,7 +36,7 @@ class Mail extends React.Component {
               })
           )
         }
-        Promise.all(promises).then(() => console.log(msenders));
+        Promise.all(promises).then(() => console.log('successfully got invites'));
         this.setState({mailSenders: msenders})
 
       })
@@ -54,7 +54,7 @@ class Mail extends React.Component {
               })
           )
         }
-        Promise.all(promises).then(() => console.log(fsenders));
+        Promise.all(promises).then(() => console.log('Successfully got friend'));
         this.setState({friendSenders: fsenders})
 
       })
@@ -69,16 +69,10 @@ class Mail extends React.Component {
     })
       .then(() => {
         console.log('Accepted invite!')
-        axios.delete('/getMail', { data: {
-          senderId: senderId,
-          recipientId: recipientId
-        }
-      })
-      .then(() => console.log('Successfully removed inv'))
+        this.setState({isClicked: true})
       })
      .catch(err => console.log(err))
 
-     componentDidMount();
   }
 
   acceptFriend(senderId, recipientId){
@@ -88,16 +82,19 @@ class Mail extends React.Component {
     })
       .then(() => {
         console.log('Friend added!')
-        axios.delete('/getMail', { data: {
-          senderId: senderId,
-          recipientId: recipientId
-        }
-        })
-        .then(() => console.log('Successfully removed inv'))
+        this.declineInv(senderId, recipientId);
         })
        .catch(err => console.log(err))
+  }
 
-       componentDidMount();
+  declineInv(senderId, recipientId) {
+    axios.delete('/getMail', { data: {
+      senderId: senderId,
+      recipientId: recipientId
+    }
+    })
+    .then(() => console.log('Successfully removed inv'))
+    .catch(err => console.log(err))
   }
 
 
@@ -107,25 +104,26 @@ class Mail extends React.Component {
     render() {
       const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
 
+
       const invlist = this.state.mailSenders.map((inv) =>
-        <li className="licss">
+        <li className="liss">
           {inv[0].username}
           <button type="button" className="acceptInv" onClick={() => {this.acceptInv(inv[0].senderId, this.state.id)}}>
             Accept
           </button>
-          <button type="button" className="declineInv" onClick={() => {this.declineInv(friend[0].senderId, this.state.id)}}>
+          <button type="button" className="declineInv" onClick={() => {this.declineInv(inv[0].senderId, this.state.id)}}>
             Decline
           </button>
         </li>
       );
 
       const friendlist = this.state.friendSenders.map((friend) =>
-      <li className="licss">
+      <li className="liss">
         {friend[0].username}
         <button type="button" className="acceptFriend" onClick={() => {this.acceptFriend(friend[0].senderId, this.state.id)}}>
             Accept
           </button>
-        <button type="button" className="declineFriend" onClick={() => {this.declineFriend(friend[0].senderId, this.state.id)}}>
+        <button type="button" className="declineFriend" onClick={() => {this.declineInv(friend[0].senderId, this.state.id)}}>
             Decline
           </button>
       </li>
