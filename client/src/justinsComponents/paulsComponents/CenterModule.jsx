@@ -12,7 +12,7 @@ const MainContainer = styled.div`
   display: flex;
 `;
 
-const CenterModule = ({ currentUser }) => {
+const CenterModule = ({ currentUser, passedDownGame }) => {
 
   const [users, setUsers] = useState([]);
   const [currentGame, setcurrentGame] = useState('');
@@ -20,6 +20,10 @@ const CenterModule = ({ currentUser }) => {
   useEffect(() => {
     getUsers();
   }, []);
+
+  useEffect(() => {
+    setcurrentGame(passedDownGame);
+  }, [passedDownGame]);
 
   const getUsers = () => {
     return fetch('/users')
@@ -33,8 +37,8 @@ const CenterModule = ({ currentUser }) => {
 
   return (
     <MainContainer>
-      <SearchBar users={users} currentGame={currentGame} setcurrentGame={setcurrentGame} currentUser={currentUser} />
-      <ChatBox currentGame={currentGame} currentUser={currentUser} />
+      <SearchBar users={users} currentGame={currentGame} setcurrentGame={setcurrentGame} currentUser={currentUser} passedDownGame={passedDownGame} />
+      <ChatBox users={users} currentGame={currentGame} currentUser={currentUser} passedDownGame={passedDownGame} />
     </MainContainer>
   );
 }

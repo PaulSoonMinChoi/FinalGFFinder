@@ -19,11 +19,21 @@ export default class FriendsList extends React.Component {
 
   //component did mount with get request for friends
   componentDidMount() {
-    this.getFriends(this.props.currentUser.id)
+    this.getFriends(this.props.currentUser.id);
+    const currentUserId = this.props.currentUser.id;
+    setInterval(
+      () => {
+        if (typeof currentUserId === 'number') {
+          this.getFriends(currentUserId)
+        }
+      },
+      5000
+    );
   }
 
   //get request for friends
   getFriends(userId) {
+    console.log(userId);
     axios.get(`/getFriends/${userId}`)
       .then((results) => {
         this.setState({
@@ -61,6 +71,21 @@ export default class FriendsList extends React.Component {
 
   render() {
     //styled components
+    const StyledFriendsAndTeamsDiv = styled.div`
+      background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
+      box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
+      border-radius: 10px;
+      width: 50%;
+      height: 520px;
+      margin-right: 2%;
+      margin-left: 1%;
+      overflow-y: auto;
+
+      ::-webkit-scrollbar {
+        display:none;
+      }
+    `;
+
     const Buttons = styled.button`
       background: linear-gradient(180deg, #B747FC 46.21%, rgba(255, 255, 255, 0) 146.21%), #1C2331;
       border-radius: 65px;
@@ -152,11 +177,11 @@ export default class FriendsList extends React.Component {
     };
 
     return (
-      <div className="appFriendsandTeams">
+      <StyledFriendsAndTeamsDiv>
         <Buttons onClick={() => {this.handleClickFriendsOrTeamsButton()}}>{friendsOrTeamButton}</Buttons>
         {teamsOrFriendsHeading}
         {teamsOrFriends}
-      </div>
+      </StyledFriendsAndTeamsDiv>
     )
   }
 }

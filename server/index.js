@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const router = require('./router.js');
+const morgan = require('morgan');
 const cors = require('cors');
 const db = require('../database/index.js');
 const model = require('../database/models.js');
@@ -9,6 +10,7 @@ const model = require('../database/models.js');
 const app = express();
 const PORT = 3000;
 app.use(cors());
+app.use(morgan('dev'));
 
 app.use('/',express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.json());
@@ -125,3 +127,24 @@ app.get('/getTeamLeaderInfo/:id', (req, res) => {
 app.listen(PORT, ()=> {
   console.log(`Listening on http://localhost:${PORT}`);
 })
+
+
+/*
+INSERT INTO invites (senderId, recipientId) VALUES ('1', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('3', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('4', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('5', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('6', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('7', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('8', '2');
+INSERT INTO invites (senderId, recipientId) VALUES ('9', '2');
+
+INSERT INTO addfriends (senderId, recipientId) VALUES ('1', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('3', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('4', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('5', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('6', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('7', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('8', '2');
+INSERT INTO addfriends (senderId, recipientId) VALUES ('9', '2');
+*/

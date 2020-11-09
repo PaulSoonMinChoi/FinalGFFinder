@@ -21,7 +21,7 @@
   background-image: url('https://i.ibb.co/s9YtFpZ/GF-Finder-Logo-4.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 358px 99px;
+  background-size: 100%;
   box-shadow: inset 0px 4px 4px rgba(203, 152, 221, 0.49);
   border-radius: 62px;
 }
@@ -55,7 +55,7 @@
 
 .ttSignUp {
 position: absolute;
-width: 6%;
+width: auto;
 height: 42px;
 left: 82%;
 top: 34%;
@@ -99,11 +99,12 @@ height: 10%;
 left: 86%;
 top: 75%;
 margin-top: 4px;
+width: auto;
+font-size: inherit;
 
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 18px;
 line-height: 21px;
 display: flex;
 align-items: center;
@@ -148,9 +149,9 @@ color: #FFFFFF;
 
 .mail-modal-main {
   position:fixed;
-  background: linear-gradient(180deg, rgba(50, 33, 120, 0.95) 49.48%, #571580 85.94%);
-  width: 600px;
-  height: 350px;
+  background: linear-gradient(180deg, rgba(9, 0, 46, 0.97) 22.92%, #250836 85.94%);
+  width: 35%;
+  height: 477px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -524,11 +525,71 @@ input[type="text4" i] {
 
 
 .ttGameInvites {
-
+  color: white;
+  text-align-last: center;
+  font-size: x-large;
+  margin-top: 4%;
 }
 
 .ttFriendInvites {
+  color: white;
+  text-align-last: center;
+  font-size: x-large;
+  margin-top: 0;
+  position: relative;
+  top: auto;
+  margin-bottom: 1%;
+}
 
+.invlist{
+  color: white;
+  list-style: none;
+  margin-left: 6%;
+  overflow: scroll;
+  height: 35%;
+}
+
+.friendlist{
+  color: white;
+  list-style: none;
+  margin-left: 6%;
+  overflow: scroll;
+  height: 33%;
+  margin-bottom: 3%;
+  position: relative;
+  top: auto;
+}
+
+li.licss {
+  margin-bottom: 3%;
+}
+
+li.licss:hover {
+  opacity: 0.7;
+}
+
+
+button.acceptInv:hover, button.acceptFriend:hover, button.declineInv:hover, button.declineFriend:hover {
+  background-color: rgb(165 40 57);
+}
+
+button.acceptInv, button.acceptFriend {
+  position: sticky;
+  left: 60%;
+  background-color: #e3a1fa;
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button.declineInv, button.declineFriend {
+  background-color: rgba(40,83,165,0.86);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  position: sticky;
+  left: 78%;
 }
 
 .kbPnPt {
@@ -542,7 +603,7 @@ input[type="text4" i] {
   display: flex;
   position: relative;
   margin-top: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   /* margin-bottom: 20%; */
 }
 
@@ -551,20 +612,22 @@ input[type="text4" i] {
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
   border-radius: 10px;
   width: 50%;
+  height: 520px;
   margin-right: 2%;
-  margin-left: 2%;
+  margin-left: 1%;
 }
 
 .GameMenu {
   padding-left: 1%;
   color: white;
   width: 40%;
+  height: 520px;
   margin-left: 2%;
   margin-right: 1%;
   background: linear-gradient(0deg,rgba(7,1,12,0.86),rgba(7,1,12,0.86)),rgba(40,83,165,0.86);
   box-shadow: inset 0px 4px 4px rgba(0,0,0,0.5);
   border-radius: 10px;
-  margin-right: 2%;
+  margin-right: 1%;
 }
 
 .VjlsF {
@@ -651,13 +714,20 @@ input[type="text4" i] {
 }
 
 
-/* .appfooter {
+.appfooter {
   position: absolute;
+  /* width: 100%;
+  height: 25%; */
+  background: linear-gradient(180deg, #090011 16.67%, #00113C 51.56%, rgb(0 0 0 / 95%) 100%);
+  filter: blur(-21px);
+  /* border-radius: 91px; */
+
   width: 100%;
-  height: 25%;
-  background: linear-gradient(180deg, #090011 16.67%, #00113C 51.56%, rgba(0, 0, 0, 0.58) 100%);
-  filter: blur(25px);
-  border-radius: 91px;
-  top: 72%;
-} */
+  height: 100%;
+  z-index: 9000;
+  background: linear-gradient(180deg, rgba(147, 45, 183, 0.81) 0.12%, #080327 0.11%, rgba(180, 92, 249, 0.85) 11.44%, rgba(31, 39, 55, 0.985816) 112%);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+}
 

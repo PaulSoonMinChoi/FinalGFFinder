@@ -23,9 +23,30 @@ router
   .route('/updateUsername')
   .put(controllers.updateUsername)
 
-// router
-//   .route('/checkMail')
-//   .get(controllers.checkMail)
-//   .delete(controllers.removeMail)
+router
+  .route('/getMail')
+  .get(controllers.getMail)
+  .delete(controllers.removeMail)
+
+router
+  .route('/getFriends')
+  .get(controllers.getFriends)
+  // .delete(controllers.removeFriends)
+
+router
+  .route('/getUserFriendAdds')
+  .get(controllers.getUser)
+
+router
+  .route('/getUserInvites')
+  .get(controllers.getInvites)
+
+router
+  .route('/acceptInvites')
+  .post(controllers.acceptInvites)
+
+router
+  .route('/acceptFriend')
+  .post(controllers.acceptFriend)
 
 module.exports = router;
