@@ -104,7 +104,7 @@ const models = {
   },
 
   getInvites: (data, callback) => {
-    let test = `SELECT * from users, invites WHERE users.ID=${data.senderId}`;
+    let test = `SELECT * from users, invites WHERE users.ID=${data.senderId} LIMIT 1`;
     db.query(test, (err, results) => {
       if (err) {
         callback(err);

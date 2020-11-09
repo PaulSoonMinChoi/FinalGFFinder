@@ -535,7 +535,7 @@ input[type="text4" i] {
   color: white;
   text-align-last: center;
   font-size: x-large;
-  margin-top: 4%;
+  margin-top: 0;
   position: relative;
   top: auto;
   margin-bottom: 1%;
@@ -547,7 +547,6 @@ input[type="text4" i] {
   margin-left: 6%;
   overflow: scroll;
   height: 35%;
-  margin-bottom: 3%;
 }
 
 .friendlist{
@@ -569,12 +568,13 @@ li.licss:hover {
   opacity: 0.7;
 }
 
+
 button.acceptInv:hover, button.acceptFriend:hover, button.declineInv:hover, button.declineFriend:hover {
   background-color: rgb(165 40 57);
 }
 
 button.acceptInv, button.acceptFriend {
-  position: fixed;
+  position: sticky;
   left: 60%;
   background-color: #e3a1fa;
   appearance: none;
@@ -588,7 +588,7 @@ button.declineInv, button.declineFriend {
   border: none;
   border-radius: 5px;
   color: white;
-  position: fixed;
+  position: sticky;
   left: 78%;
 }
 
@@ -603,7 +603,7 @@ button.declineInv, button.declineFriend {
   display: flex;
   position: relative;
   margin-top: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   /* margin-bottom: 20%; */
 }
 
@@ -714,13 +714,21 @@ button.declineInv, button.declineFriend {
 }
 
 
-/* .appfooter {
+.appfooter {
   position: absolute;
+  /* width: 100%;
+  height: 25%; */
+  background: linear-gradient(180deg, #090011 16.67%, #00113C 51.56%, rgb(0 0 0 / 95%) 100%);
+  filter: blur(-21px);
+  /* border-radius: 91px; */
+  top: auto;
+
   width: 100%;
-  height: 25%;
-  background: linear-gradient(180deg, #090011 16.67%, #00113C 51.56%, rgba(0, 0, 0, 0.58) 100%);
-  filter: blur(25px);
-  border-radius: 91px;
-  top: 72%;
-} */
+  height: 70px;
+  z-index: 9000;
+  background: linear-gradient(180deg, rgba(147, 45, 183, 0.81) 0.12%, #080327 0.11%, rgba(180, 92, 249, 0.85) 11.44%, rgba(31, 39, 55, 0.985816) 112%);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+}
 
