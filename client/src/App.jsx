@@ -338,9 +338,6 @@ class App extends React.Component {
               </div>
 
               <AppBody currentUser={this.state.currentUser}/>
-              <div className="signupvid">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/cUcomfJlgm0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
                <div className="appfooter">
                 </div>
             </div>
