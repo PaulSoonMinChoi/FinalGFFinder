@@ -125,7 +125,7 @@ const Button = styled.button`
   text-align: center;
   outline: none;
   margin-right: 10px;
-  display: block;
+  display: ${(props) => (props.active.length > 1 ? 'block' : 'none')};
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -177,6 +177,15 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
 
   const [chatInput, setChatInput] = useState('');
   const [usersChats, setUsersChats] = useState([]);
+  const [randomChats, setrandomChats] = useState([]);
+
+  useEffect(() => {
+    let arr = [];
+    for (let i = 0; i < 100; i++) {
+      arr.push(faker.lorem.sentence());
+    }
+    setrandomChats(arr);
+  }, [])
 
   const RoomName = () => {
     if (currentGame === '') {
@@ -210,10 +219,18 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
               return (
                 <ChatEntry>
                   <PlayerName>{user.username}:</PlayerName>
-                  <span>{faker.lorem.sentence()}</span>
+                  <span>{randomChats[index]}</span>
                 </ChatEntry>
               )
             }
+          })}
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -227,10 +244,18 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
               return (
                 <ChatEntry>
                   <PlayerName>{user.username}:</PlayerName>
-                  <span>{faker.lorem.sentence()}</span>
+                  <span>{randomChats[index]}</span>
                 </ChatEntry>
               )
             }
+          })}
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -244,10 +269,18 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
               return (
                 <ChatEntry>
                   <PlayerName>{user.username}:</PlayerName>
-                  <span>{faker.lorem.sentence()}</span>
+                  <span>{randomChats[index]}</span>
                 </ChatEntry>
               )
             }
+          })}
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -261,10 +294,18 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
               return (
                 <ChatEntry>
                   <PlayerName>{user.username}:</PlayerName>
-                  <span>{faker.lorem.sentence()}</span>
+                  <span>{randomChats[index]}</span>
                 </ChatEntry>
               )
             }
+          })}
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -278,10 +319,18 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
               return (
                 <ChatEntry>
                   <PlayerName>{user.username}:</PlayerName>
-                  <span>{faker.lorem.sentence()}</span>
+                  <span>{randomChats[index]}</span>
                 </ChatEntry>
               )
             }
+          })}
+          {usersChats.map((chatUser, index) => {
+            return (
+              <ChatEntry>
+                <PlayerName>{chatUser.username}:</PlayerName>
+                <span>{chatUser.chat}</span>
+              </ChatEntry>
+            )
           })}
           </ChatList>
         </ChatsContainer>
@@ -295,7 +344,7 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
               return (
                 <ChatEntry>
                   <PlayerName>{user.username}:</PlayerName>
-                  <span>{faker.lorem.sentence()}</span>
+                  <span>{randomChats[index]}</span>
                 </ChatEntry>
               )
             }
@@ -320,23 +369,10 @@ const ChatBox = ({ currentGame, users, passedDownGame, currentUser }) => {
       {Chats()}
       <SearchBarInput active={currentGame} onChange={(e) => handleChange(e)} value={chatInput} />
       <ButtonContainer>
-        <Button onClick={() => addChats({username: currentUser.username, chat: chatInput})}>Send</Button>
+        <Button active={currentGame} onClick={() => {addChats({username: currentUser.username, chat: chatInput}); setChatInput('');}}>Send</Button>
       </ButtonContainer>
     </ChatBoxContainer>
   )
 }
 
 export default ChatBox;
-
-            // <ChatEntry>
-            // <PlayerName>Paul Choi:</PlayerName>
-            // <span>Yo whats up guys anyone want to play?</span>
-            // </ChatEntry>
-            // <ChatEntry>
-            // <PlayerName>Tracy Tea:</PlayerName>
-            // <span>Does anyone have one more mid laner???</span>
-            // </ChatEntry>
-            // <ChatEntry>
-            // <PlayerName>Justin Murakami:</PlayerName>
-            // <span>I am a mid laner @Tracy Tea! Wanna add me?</span>
-            // </ChatEntry>

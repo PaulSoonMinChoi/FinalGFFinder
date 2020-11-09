@@ -337,7 +337,7 @@ class App extends React.Component {
                 </div>
               </div>
 
-              {/* <AppBody currentUser={this.state.currentUser}/> */}
+              <AppBody currentUser={this.state.currentUser}/>
 
                {/* <div className="appfooter">
                 </div> */}

@@ -344,6 +344,10 @@ const SearchBar = ({ users, currentGame, setcurrentGame, currentUser, passedDown
 
   }, [])
 
+  const displayGameName = () => {
+    // if (currentGame !== '')
+  }
+
   const getGames = (searchItem) => {
     axios.get('/games', {
       params: {
